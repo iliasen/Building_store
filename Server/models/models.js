@@ -32,7 +32,7 @@ const items = sequelize.define('items',{
     price:{type: DataTypes.INTEGER,
     allowNull: false},
 
-    raiting: {type: DataTypes.STRING,
+    rating: {type: DataTypes.STRING,
     defaultValue: 0},
 
     image: {type: DataTypes.STRING,
@@ -73,13 +73,14 @@ const Brand = sequelize.define('Brand',{
         unique: true}
 })
 
-const raiting = sequelize.define('raiting',{
+const rating = sequelize.define('rating',{
     id: {type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true},
 
     rate: {type: DataTypes.STRING,
         allowNull: false,}
+
 })
 
 const TypeBrand = sequelize.define('Type_Brand',{ //перефирийная таблица(связующая связь многие ко многим)
@@ -92,11 +93,11 @@ Basket.belongsTo(User)
 Basket.hasMany(Basket_items)
 Basket_items.belongsTo(Basket)
 
-User.hasMany(raiting)
-raiting.belongsTo(User)
+User.hasMany(rating)
+rating.belongsTo(User)
 
-items.hasOne(raiting)
-raiting.belongsTo(items)
+items.hasMany(rating)
+rating.belongsTo(items)
 
 items.hasMany(items_info)
 items_info.belongsTo(items)
@@ -124,6 +125,6 @@ module.exports = {
     items_info,
     Type,
     Brand,
-    raiting,
-    TypeBrand,
+    rating,
+    TypeBrand
 }
