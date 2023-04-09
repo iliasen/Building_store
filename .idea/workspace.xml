@@ -6,53 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="da2e4766-0cc2-4c75-bcee-bee778690602" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/controllers/brandController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/controllers/brandController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/controllers/itemsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/controllers/itemsController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/controllers/typeController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/controllers/typeController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/uuid/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/uuid/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/dist/esm-browser/md5.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/uuid/dist/esm-browser/md5.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/dist/esm-browser/parse.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/uuid/dist/esm-browser/parse.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/dist/esm-browser/rng.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/uuid/dist/esm-browser/rng.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/dist/esm-browser/sha1.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/uuid/dist/esm-browser/sha1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/dist/esm-browser/stringify.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/uuid/dist/esm-browser/stringify.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/dist/esm-browser/v1.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/uuid/dist/esm-browser/v1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/dist/esm-browser/v3.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/uuid/dist/esm-browser/v3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/dist/esm-browser/v35.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/uuid/dist/esm-browser/v35.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/dist/esm-browser/v4.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/uuid/dist/esm-browser/v4.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/dist/esm-browser/v5.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/uuid/dist/esm-browser/v5.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/dist/esm-browser/version.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/uuid/dist/esm-browser/version.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/dist/esm-node/stringify.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/uuid/dist/esm-node/stringify.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/dist/esm-node/v1.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/uuid/dist/esm-node/v1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/dist/esm-node/v35.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/uuid/dist/esm-node/v35.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/dist/esm-node/v4.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/uuid/dist/esm-node/v4.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/dist/esm-node/version.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/uuid/dist/esm-node/version.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/dist/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/uuid/dist/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/dist/rng-browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/uuid/dist/rng-browser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/dist/stringify.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/uuid/dist/stringify.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/dist/umd/uuid.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/dist/umd/uuidNIL.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/dist/umd/uuidParse.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/dist/umd/uuidStringify.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/dist/umd/uuidValidate.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/dist/umd/uuidVersion.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/dist/umd/uuidv1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/dist/umd/uuidv3.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/dist/umd/uuidv4.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/dist/umd/uuidv5.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/dist/v1.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/uuid/dist/v1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/dist/v35.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/uuid/dist/v35.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/dist/v4.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/uuid/dist/v4.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/dist/version.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/uuid/dist/version.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/uuid/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/uuid/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/routes/brandRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/routes/brandRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/routes/itemsRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/routes/itemsRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/routes/typeRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/routes/typeRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Диаграмма базы данных.png" beforeDir="false" afterPath="$PROJECT_DIR$/Server/models/Диаграмма базы данных.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/error/ApiError.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/error/ApiError.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/middleware/ErrorHandlingMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/middleware/ErrorHandlingMiddleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/static/0e2a018d-947b-4e98-82c8-397da2a0742b.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +39,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Work/git/Building_store&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -110,6 +68,9 @@
       <workItem from="1680193163856" duration="4750000" />
       <workItem from="1680198070276" duration="110000" />
       <workItem from="1680198190898" duration="393000" />
+      <workItem from="1680360202923" duration="52000" />
+      <workItem from="1680364214193" duration="354000" />
+      <workItem from="1680807996966" duration="4614000" />
     </task>
     <servers />
   </component>

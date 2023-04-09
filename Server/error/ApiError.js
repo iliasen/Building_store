@@ -1,6 +1,6 @@
 class ApiError extends Error{
     constructor(status,massage) {
-        super()
+        super();
         this.status = status
         this.massage = massage
     }
