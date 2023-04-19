@@ -5,14 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da2e4766-0cc2-4c75-bcee-bee778690602" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Server/controllers/itemController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/middleware/authMiddleware.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/middleware/checkRoleMiddleware.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/controllers/itemsController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/models/models.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/models/models.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/routes/itemsRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/routes/itemRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/static/b834d9b4-0409-45f8-a58c-dff8524e2efb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/.env" beforeDir="false" afterPath="$PROJECT_DIR$/Server/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/controllers/userController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/routes/brandRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/routes/brandRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/routes/itemRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/routes/itemRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/routes/typeRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/routes/typeRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/routes/userRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/routes/userRouter.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +91,8 @@
       <workItem from="1681913343154" duration="2027000" />
       <workItem from="1681915435325" duration="137000" />
       <workItem from="1681915584212" duration="2404000" />
+      <workItem from="1681920498220" duration="2123000" />
+      <workItem from="1681932204758" duration="4487000" />
     </task>
     <servers />
   </component>
