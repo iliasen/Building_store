@@ -1,130 +1,90 @@
-const sequelize = require("../db")
-const {dataTypes, DataTypes} = require('sequelize')
+const sequelize = require('../db')
+const {DataTypes} = require('sequelize')
 
-const User = sequelize.define('user',{
-    id: {type: DataTypes.INTEGER,primaryKey: true, autoIncrement:true},
-    email: {type: DataTypes.STRING},
+const User = sequelize.define('user', {
+    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    email: {type: DataTypes.STRING, unique: true,},
     password: {type: DataTypes.STRING},
-    role: {type: DataTypes.STRING, defaultValue: "USER"}
+    role: {type: DataTypes.STRING, defaultValue: "USER"},
 })
 
-const Basket = sequelize.define('basket',{
-    id: {type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement:true},
+const Basket = sequelize.define('basket', {
+    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
 })
 
-const Basket_items = sequelize.define('basket_items',{
-    id: {type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement:true},
+const BasketDevice = sequelize.define('basket_device', {
+    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
 })
 
-const items = sequelize.define('items',{
-    id: {type:DataTypes.INTEGER,
-        primaryKey:true,
-        autoIncrement: true},
-
-    name: {type:DataTypes.STRING,
-        unique: true,
-        allowNull: false},
-
-    price:{type: DataTypes.INTEGER,
-    allowNull: false},
-
-    rating: {type: DataTypes.STRING,
-    defaultValue: 0},
-
-    image: {type: DataTypes.STRING,
-    allowNull: false}
+const Item = sequelize.define('item', {
+    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    name: {type: DataTypes.STRING, unique: true, allowNull: false},
+    price: {type: DataTypes.INTEGER, allowNull: false},
+    rating: {type: DataTypes.INTEGER, defaultValue: 0},
+    img: {type: DataTypes.STRING, allowNull: false},
 })
 
-const items_info = sequelize.define('items_info', {
-    id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true},
-
-    title: {type: DataTypes.STRING,
-        allowNull: false
-    },
-
-    discription: {type: DataTypes.STRING,
-    allowNull: false}
- })
-
-const Type = sequelize.define('Type',{
-    id: {type: DataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true},
-
-    name: {type: DataTypes.STRING,
-    allowNull: false,
-    unique: true}
+const Type = sequelize.define('type', {
+    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    name: {type: DataTypes.STRING, unique: true, allowNull: false},
 })
 
-const Brand = sequelize.define('Brand',{
-    id: {type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true},
-
-    name: {type: DataTypes.STRING,
-        allowNull: false,
-        unique: true}
+const Brand = sequelize.define('brand', {
+    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    name: {type: DataTypes.STRING, unique: true, allowNull: false},
 })
 
-const rating = sequelize.define('rating',{
-    id: {type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true},
-
-    rate: {type: DataTypes.STRING,
-        allowNull: false,}
-
+const Rating = sequelize.define('rating', {
+    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    rate: {type: DataTypes.INTEGER, allowNull: false},
 })
 
-const TypeBrand = sequelize.define('Type_Brand',{ //перефирийная таблица(связующая связь многие ко многим)
-    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true}
+const ItemInfo = sequelize.define('item_info', {
+    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    title: {type: DataTypes.STRING, allowNull: false},
+    description: {type: DataTypes.STRING, allowNull: false},
 })
+
+const TypeBrand = sequelize.define('type_brand', {
+    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+})
+
 
 User.hasOne(Basket)
 Basket.belongsTo(User)
 
-Basket.hasMany(Basket_items)
-Basket_items.belongsTo(Basket)
+User.hasMany(Rating)
+Rating.belongsTo(User)
 
-User.hasMany(rating)
-rating.belongsTo(User)
+Basket.hasMany(BasketDevice)
+BasketDevice.belongsTo(Basket)
 
-items.hasMany(rating)
-rating.belongsTo(items)
+Type.hasMany(Item)
+Item.belongsTo(Type)
 
-items.hasMany(items_info)
-items_info.belongsTo(items)
+Brand.hasMany(Item)
+Item.belongsTo(Brand)
 
-Type.hasOne(items)
-items.belongsTo(Type)
+Item.hasMany(Rating)
+Rating.belongsTo(Item)
 
-Brand.hasOne(items)
-items.belongsTo(Brand)
+Item.hasMany(BasketDevice)
+BasketDevice.belongsTo(Item)
 
-items.hasMany(Basket_items)
-Basket_items.belongsTo(items)
+Item.hasMany(ItemInfo, {as: 'info'});
+ItemInfo.belongsTo(Item)
 
-items.hasMany(items_info)
-items_info.belongsTo(items)
-
-Type.belongsToMany(Brand, {through: TypeBrand})//многие ко многим
-Brand.belongsToMany(Type, {through: TypeBrand})
+Type.belongsToMany(Brand, {through: TypeBrand })
+Brand.belongsToMany(Type, {through: TypeBrand })
 
 module.exports = {
     User,
     Basket,
-    Basket_items,
-    items,
-    items_info,
+    BasketDevice,
+    Item,
     Type,
     Brand,
-    rating,
-    TypeBrand
+    Rating,
+    TypeBrand,
+    ItemInfo
 }
