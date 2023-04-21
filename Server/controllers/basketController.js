@@ -1,19 +1,20 @@
-const {Basket} = require('../models/models')
+const {Basket, Item} = require('../models/models')
 const {ApiError}= require('../error/ApiError')
 class BasketController{
 
-    async addItem(req, res) {
-        const { basketId, itemId, quantity } = req.body;
-        const basket = await Basket.findOne({ where: { id: basketId } });
+    async addItem(req, res, next) {
+        const {basketId, itemId} = req.params;
+        const {quantity} = req.body
+        const basket = await Basket.findOne({ where: {id: basketId}});
         if (!basket) {
-            return res.status(404).json({ message: ‘Basket not found’ });
+            return next(ApiError.badRequest('Корзина не найдена'))
         }
-        const item = await Item.findOne({ where: { id: itemId } });
+        const item = await Item.findOne({ where: {id: itemId}});
         if (!item) {
-            return res.status(404).json({ message: ‘Item not found’ });
+            return next(ApiError.badRequest('Указанный товар не найдена'))
         }
         await basket.addItem(item, { through: { quantity } });
-        return res.json({ message: ‘Item added to basket’ });
+        return res.json({ message: "Товар добавлен в карзину" });
     }
 
     async getItems(req, res, next) {
@@ -27,18 +28,33 @@ class BasketController{
     }
 
 
-    async removeItem(req, res) {
-        const { basketId, itemId } = req.body;
-        const basket = await Basket.findOne({ where: { id: basketId } });
+    async removeItem(req, res, next) {
+        const { basketId, itemId } = req.params;
+        const basket = await Basket.findOne({ where: { id: basketId}});
         if (!basket) {
-            return res.status(404).json({ message: ‘Basket not found’ });
+            return next(ApiError.badRequest('Корзина не найдена'))
         }
-        const item = await Item.findOne({ where: { id: itemId } });
+        const item = await Item.findOne({ where: { id: itemId }});
         if (!item) {
-            return res.status(404).json({ message: ‘Item not found’ });
+            return next(ApiError.badRequest('Указанный товар не найдена'))
         }
         await basket.removeItem(item);
-        return res.json({ message: ‘Item removed from basket’ });
+        return res.json({ message: "Товар удалён из карзину" });
+    }
+
+    async updateItem (req, res, next) {
+        const {basketId, itemId} = req.params;
+        const {quantity} = req.body
+        const basket = await Basket.findOne({ where: {id: basketId}});
+        if (!basket) {
+            return next(ApiError.badRequest('Корзина не найдена'))
+        }
+        const item = await Item.findOne({ where: {id: itemId}});
+        if (!item) {
+            return next(ApiError.badRequest('Указанный товар не найдена'))
+        }
+        await basket.setQuantity(item, quantity)
+        return res.json({ message: "Количество товара изменено !"});
     }
 }
 

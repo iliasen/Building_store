@@ -5,20 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da2e4766-0cc2-4c75-bcee-bee778690602" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Server/controllers/basketController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/controllers/ratingController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/routes/ratingRouter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/routes/basketRouter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/controllers/basketController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/controllers/basketController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/controllers/brandController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/controllers/brandController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/controllers/itemController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/controllers/itemController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/controllers/typeController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/controllers/typeController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/models/models.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/models/models.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/routes/brandRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/routes/brandRouter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/routes/itemRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/routes/itemRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/routes/typeRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/routes/typeRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/static/101b8b46-9d53-4c7e-98cc-13fc2bd3b378.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/static/e395efbc-9676-426b-8c49-f6b0333030d6.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +90,7 @@
       <workItem from="1681983082168" duration="5223000" />
       <workItem from="1681996520497" duration="7655000" />
       <workItem from="1682066314838" duration="3540000" />
+      <workItem from="1682080692014" duration="2441000" />
     </task>
     <servers />
   </component>

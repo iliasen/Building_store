@@ -16,7 +16,7 @@ class BrandController{
         if(!id){
             return next(ApiError.internal('Ошибка. Необходимо указать id бренда'))
         }
-        const brand = await Brand.destroy({where:{id}})
+        await Brand.destroy({where:{id}})
         res.json({message: 'бренд успешно удалён'})
     }
 
@@ -26,7 +26,7 @@ class BrandController{
         if(!name || !id){
             return next(ApiError.internal('Ошибка. Необходимо указать id и новое имя бренда'))
         }
-        const brand = await Brand.update({name},{where:{id}})
+        await Brand.update({name},{where:{id}})
         res.json({message: 'бренд успешно обновлён'})
     }
 }
