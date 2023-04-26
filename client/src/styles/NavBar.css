@@ -1,0 +1,19 @@
+.brand{
+    color: white;
+    text-decoration: none
+}
+.brand:hover{
+    color: white;
+    text-decoration: none
+}
+.href{
+    color: darkgrey;
+    text-decoration: none
+}
+.href:hover{
+    color: white;
+}
+.href:focus{
+    color: white;
+    outline: none;
+}

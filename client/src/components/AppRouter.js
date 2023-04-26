@@ -1,41 +1,24 @@
-// import React from 'react';
-// import {Switch, Route, Redirest} from 'react-router-dom'
-// import {authRoutes, publicRoutes} from "../routes";
-// import {SHOP_ROUTER} from "../utils/consts";
-//
-// const AppRouter = () => {
-//     const flag = false
-//     return (
-//         <Switch>
-//             {flag && authRoutes.map(({path, Component}) =>
-//                 <Route key={path} path={path} component={Component} exact/>
-//             )}
-//             {publicRoutes.map(({path, Component}) =>
-//                 <Route key={path} path={path} component={Component} exact/>
-//             )}
-//             <Redirest to={SHOP_ROUTER}/>
-//         </Switch>
-//     );
-// };
-// export default AppRouter;
+import React,{useContext} from 'react';
+import {Routes, Route, Navigate} from 'react-router-dom'
+import {authRoutes, publicRoutes} from "../routes";
+import {SHOP_ROUTE} from "../utils/consts";
+import {Context} from "../index";
 
-import React from 'react'
-    import {Routes, Route, Navigate} from 'react-router-dom'
-    import {authRoutes, publicRoutes} from '../routes';
-    import {SHOP_ROUTER} from '../utils/consts';
-    const AppRouter = () => {
-    const flag = false
+const AppRouter = () => {
+    const {user} = useContext(Context)
+    console.log(user)
     return (
         <Routes>
-            {flag && authRoutes.map(({path, Component}) =>
-                <Route key={path} path={path} component={Component} exact/>
+            {user.flag && authRoutes.map(({path, Component}) =>
+                <Route key={path} path={path} element={<Component/>} exact/>
             )}
             {publicRoutes.map(({path, Component}) =>
-                <Route key={path} path={path} component={Component} exact/>
+                <Route key={path} path={path} element={<Component/>} exact/>
             )}
-            <Navigate to={SHOP_ROUTER}/>}
+            <Route path="*" element={<Navigate to={SHOP_ROUTE} replace />}/> //возращает страницу магазина если проприсан левый URL
         </Routes>
     );
 };
-        export default AppRouter;
+
+export default AppRouter;
 
