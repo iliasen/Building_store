@@ -6,10 +6,11 @@ import {Context} from "../index";
 
 const AppRouter = () => {
     const {user} = useContext(Context)
+
     console.log(user)
     return (
         <Routes>
-            {user.flag && authRoutes.map(({path, Component}) =>
+            {user.Auth && authRoutes.map(({path, Component}) =>//для авторизованных пользователей
                 <Route key={path} path={path} element={<Component/>} exact/>
             )}
             {publicRoutes.map(({path, Component}) =>

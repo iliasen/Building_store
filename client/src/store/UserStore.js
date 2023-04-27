@@ -8,13 +8,13 @@ export default class UserStore{
     }
 
     setAuth(bool){
-        this._flag=true
+        this._flag=bool
     }
     setUser(user){
         this._user=user
     }
 
-    get setAuth(){
+    get Auth(){
         return this._flag
     }
     get user(){

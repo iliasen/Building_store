@@ -9,14 +9,13 @@ export const Context = createContext(null)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-      <Context.Provider value={{
+    <Context.Provider value={{
           user: new UserStore(),
           item: new ItemStore(),
-      }}>
-          <App />
-      </Context.Provider>
-  </React.StrictMode>
+    }}>
+        <App />
+    </Context.Provider>
+
 );
 
 

@@ -5,17 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da2e4766-0cc2-4c75-bcee-bee778690602" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/NavBar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/store/ItemStore.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/store/UserStore.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/styles/NavBar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/styles/Auth.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/AppRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/AppRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/NavBar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/utils/consts.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/consts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/Admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/UserStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/UserStore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/NavBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/NavBar.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -41,22 +39,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Work/git/study_web/Objects",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Work/git/study_web/Objects&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Work\git\Building_store\Server\models" />
@@ -106,7 +104,9 @@
       <workItem from="1682231020101" duration="10045000" />
       <workItem from="1682360404239" duration="1439000" />
       <workItem from="1682415467449" duration="668000" />
-      <workItem from="1682499493827" duration="6495000" />
+      <workItem from="1682499493827" duration="6740000" />
+      <workItem from="1682516149257" duration="6156000" />
+      <workItem from="1682590113707" duration="14216000" />
     </task>
     <servers />
   </component>
