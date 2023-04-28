@@ -33,7 +33,13 @@
 .href:hover{
     color: white;
 }
-.href:focus{
+.href.active{
     color: white;
     outline: none;
+}
+
+.image{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
 }
