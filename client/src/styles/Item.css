@@ -2,3 +2,27 @@
     width: 150px;
     height: 150px;
 }
+
+.star_img{
+    width: 20px;
+    height: 20px;
+}
+
+.description{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 150px;
+    margin-top: 3px;
+}
+
+.rate_container{
+    display: flex;
+    align-items: center;
+}
+.div-container{
+    cursor: pointer;
+}
+.type{
+    color: lightslategrey;
+}

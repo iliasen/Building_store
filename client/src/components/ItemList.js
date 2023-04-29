@@ -3,15 +3,16 @@ import {Context} from "../index";
 import {observer} from "mobx-react-lite";
 import Item from "./Item";
 import '../styles/ItemList.css'
+import {Row} from "react-bootstrap";
 
 const ItemList = observer(() => {
     const {item} = useContext(Context)
     return (
-        <div className='list'>
+        <Row className='list'>
             {item.items.map(item =>
                 <Item key={item.id} item={item}/>
             )}
-        </div>
+        </Row>
     );
 });
 

@@ -4,7 +4,6 @@ import {Col, Row} from "react-bootstrap";
 import TypeBar from "../components/TypeBar";
 import ItemList from "../components/ItemList";
 
-
 const Shop = () => {
     return (
         <Container>
@@ -13,7 +12,7 @@ const Shop = () => {
                     <TypeBar/>
                 </Col>
                 <Col md={9}>
-                    <ItemList />
+                    <ItemList/>
                 </Col>
             </Row>
         </Container>

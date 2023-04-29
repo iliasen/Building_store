@@ -5,19 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da2e4766-0cc2-4c75-bcee-bee778690602" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/Item.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/ItemList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/TypeBar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/styles/Item.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/styles/ItemList.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/styles/TypeBar.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/NavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Item.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Item.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/ItemList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ItemList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/Shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Shop.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/store/ItemStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/ItemStore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/Auth.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Auth.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/NavBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/NavBar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/Item.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Item.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/ItemList.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/ItemList.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,6 +110,7 @@
       <workItem from="1682672802530" duration="94000" />
       <workItem from="1682674218748" duration="3252000" />
       <workItem from="1682688860481" duration="8461000" />
+      <workItem from="1682752986966" duration="6634000" />
     </task>
     <servers />
   </component>
