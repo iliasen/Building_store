@@ -10,7 +10,7 @@ const Item = ({item}) => {
     console.log(navigate)
     return (
         <Col md={3} onClick={() => navigate(ITEM_ROUTE+ '/' + item.id)}>
-            <div className='div-container'>
+            <div className='items-container'>
                 <Image className='Item_img' src={item.img}/>
                 <div className='description'>
                     <header className='type'>Item</header>

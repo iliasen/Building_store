@@ -1,0 +1,74 @@
+.about_item-container{
+    display: flex;
+    padding-top: 40px;
+}
+.item-image-300{
+    margin: 16px;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+}
+.head{margin-left: 48px;
+    margin-top: 16px;}
+.name-article{
+    display: flex;
+    flex: 1;
+}
+.name-article h1{
+    font-family: Arial,Helvetica,sans-serif
+}
+.name-article div{
+    display: flex;
+    align-items: flex-start;
+}
+.name-article p{
+    margin-top: -5px;
+    margin-left: 10px;
+    font-family: Arial,Helvetica;
+    font-size: 14px;
+    align-items: flex-start;
+    color: dimgrey;
+}
+
+.feedback-button{
+    margin-left: 10px;
+    text-decoration: underline dashed #EAE3DD;
+    cursor: pointer;
+    font-size: 16px;
+}
+.feedback-button:hover{
+    color: dimgrey;
+}
+
+.price-methods{
+    border-radius: 10px;
+    background-color: darkgrey;
+    margin-left: 200px;
+    width: 350px;
+    height: 500px;
+}
+
+.rating_block {
+    width: 125px;
+    height: 25px;
+}
+.rating_block input[type="radio"] {
+    display: none;
+}
+.label_rating {
+    float: right;
+    display: block;
+    width: 25px;
+    height: 25px;
+    background: url('../res/ItemPage/star.png') no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+.rating_block .label_rating:hover, /*Правило для ховера на текущий лейбл*/
+.rating_block .label_rating:hover ~ .label_rating, /*Правило для всех следующих лейблов по DOM дереву*/
+.rating_block input[type="radio"]:checked ~ .label_rating /*Правило для всех следующих лейблов после выбранного инпута, чтобы звездочки как бы зафиксировались*/
+{
+    background-position: 50%-2px ;
+    background: url('../res/ItemPage/black_star.png') no-repeat;
+    background-size: contain;
+}

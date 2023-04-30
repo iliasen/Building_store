@@ -8,7 +8,7 @@ import '../styles/TypeBar.css'
 const TypeBar = observer(() => {
     const {item} = useContext(Context)
     return (
-        <div className='div-container'>
+        <div className='type-bar-container'>
             <div className='main'>
             <p>Тип товара</p>
             <ListGroup>

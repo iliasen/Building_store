@@ -2,15 +2,17 @@ p{
     font-weight: bold;
     text-align: center;
     margin-top: 10px;
+
 }
 .main{
     width:200px;
 }
-.div-container{
+.type-bar-container{
     margin-top: 16px;
 }
 .guidance{
     cursor: pointer;
+    background-color: #F5F5F5;
 }
 .guidance:hover{
     background-color: #2f2f35;

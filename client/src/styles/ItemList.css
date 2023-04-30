@@ -1,4 +1,7 @@
 .list{
     display: flex;
     margin-top: 45px;
+    background-color: #EAE3DD;
+    border-radius: 10px;
+    padding: 16px;
 }

@@ -20,8 +20,15 @@
     display: flex;
     align-items: center;
 }
-.div-container{
+.items-container{
     cursor: pointer;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-sizing: content-box;
+    margin: 16px;
+    width: 150px;
+
 }
 .type{
     color: lightslategrey;
