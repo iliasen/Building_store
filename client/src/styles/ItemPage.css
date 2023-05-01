@@ -30,27 +30,218 @@
     color: dimgrey;
 }
 
-.feedback-button{
+#feedback-button{
     margin-left: 10px;
     text-decoration: underline dashed #EAE3DD;
     cursor: pointer;
     font-size: 16px;
 }
-.feedback-button:hover{
+#feedback-button:hover{
     color: dimgrey;
+}
+
+#after_feedback{
+    margin-left: 8px;
+    margin-top: -2px;
+    font-size: 18px;
 }
 
 .price-methods{
     border-radius: 10px;
-    background-color: darkgrey;
-    margin-left: 200px;
-    width: 350px;
+    background-color: #A3A3A3;
+    margin-left: 175px;
+    width: 400px;
     height: 500px;
+    padding: 16px;
 }
 
+.price-methods .price{
+    font-size: 30px;
+    margin-top: 20px;
+    color: #FFFFFF;
+}
+
+.availability{
+    display: flex;
+    margin-left: 25px;
+}
+
+
+.yes_mark{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    margin-top: 4px;
+}
+
+
+.description_other_shops{
+    font-size: 12px;
+    margin-top: 5px;
+    font: inherit;
+    font-family: 'mn', sans-serif;
+}
+
+.buy-quantity{
+    margin-top: 25px;
+    display: flex;
+}
+
+.buy-quantity input{
+    margin-right: 32px;
+    width: 5em;
+    padding: 5px;
+    text-align: center;
+}
+.buy-quantity button{
+    background-color: #2f2f35;
+    color: #FFFFFF;
+    border-radius: 10px;
+    height: 55px;
+    padding: 10px;
+    flex-shrink: 0;
+}
+.buy_image{
+    width: 40px;
+    height: 40px;
+}
+.location_wallet_img{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+
+.delivery, .opportunity{
+    margin-top: 20px;
+}
+.from_other_space{
+    margin-top: 10px;
+}
+.opportunity b{
+    margin-top: 5px;
+}
+.opportunity .image_container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.belcard,.visa,.mastercard,.nal{
+   background-color: #F5F5F5;
+    border-radius: 10px;
+    width: 75px;
+    height: 45px;
+}
+.belcard{
+    background: url("../res/ItemPage/belcard.webp") no-repeat;
+    background-size: contain;
+}
+.visa{
+    background: url("../res/ItemPage/visa.webp") no-repeat;
+    background-size: contain;
+}
+.mastercard{
+    background: url("../res/ItemPage/mastercard.webp") no-repeat;
+    background-size: contain;
+}
+.nal{
+    background: url("../res/ItemPage/nal.webp") no-repeat;
+    background-size: contain;
+}
+
+
+#feedback-container{
+    margin-top:10px;
+    display: none;
+}
+#feedback-container textarea{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+.button_container{
+    display: flex;
+    margin-top: 10px;
+}
+.button_container input{
+    margin-right: 16px;
+    border-radius: 10px;
+    background-color: #ACADA8;
+    text-align: center;
+}
+.button_container input[type="button"]{
+    background-color: #f66d52;
+}
+
+.characters-feedback_container{
+    margin-top: -150px;
+    display: block;
+}
+.characters-feedback-titles-container{
+    display: flex;
+    margin: 16px;
+}
+
+.character-title,.feedback-title{
+    cursor: pointer;
+    display: flex;
+}
+
+.title{
+    margin-right: 16px;
+}
+
+.characters-feedback{
+    padding: 16px;
+    background-color: #F5F5F5;
+    border-radius: 10px;
+    width: 800px;
+    height: 150px;
+}
+
+.characters_img,.feedback_img{
+    margin-top: 5px;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    background-size: contain;
+}
+.characters_img{
+    background-image: url("../res/ItemPage/characteristics.png");
+}
+.feedback_img{
+    background-image: url("../res/ItemPage/comments.png");
+}
+.character-title:hover .characters_img{
+    background-image: url("../res/ItemPage/characters.gif");
+}
+.feedback-title:hover .feedback_img{
+    background-image: url("../res/ItemPage/comment.gif");
+}
+
+
+
+
+
+
+.mark_rate{
+    margin-top: -8px;
+    margin-right: 5px;
+    font-size: 24px;
+}
+.rate{
+    background-image: url("../res/ItemPage/star.png");
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+}
 .rating_block {
     width: 125px;
     height: 25px;
+    flex-shrink: 0;
+    margin-left: 5px;
 }
 .rating_block input[type="radio"] {
     display: none;

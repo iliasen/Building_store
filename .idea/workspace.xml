@@ -5,14 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da2e4766-0cc2-4c75-bcee-bee778690602" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/styles/ItemPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/Footer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/styles/Footer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/styles/Shop.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Item.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Item.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/TypeBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/TypeBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/ItemPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/ItemPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/Item.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Item.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/ItemList.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/ItemList.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/TypeBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/TypeBar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/Shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Shop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/ItemStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/ItemStore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/ItemPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/ItemPage.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +122,12 @@
       <workItem from="1682752986966" duration="6634000" />
       <workItem from="1682841983579" duration="5248000" />
       <workItem from="1682856434392" duration="2832000" />
-      <workItem from="1682864154621" duration="3702000" />
+      <workItem from="1682864154621" duration="7430000" />
+      <workItem from="1682876684889" duration="4282000" />
+      <workItem from="1682881583909" duration="3434000" />
+      <workItem from="1682925263748" duration="399000" />
+      <workItem from="1682932623943" duration="8157000" />
+      <workItem from="1682950478188" duration="2126000" />
     </task>
     <servers />
   </component>

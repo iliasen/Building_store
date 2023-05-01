@@ -21,7 +21,11 @@ export default class ItemStore{
             {id:2,	name:"Worx WX337",price:277,img:"4cab4e5a-1d82-4532-b73e-404512f3b68b.jpg", typeID:2, brandId:2, rating: 0},
             {id:3,	name:"WORX WG385E.9",price:250,img:"ccde093e-b8bb-4491-9a53-1cd1bbcd5642.jpg", typeID:3, brandId:2, rating: 0},
             {id:4,	name:"Makita DF333DWYE",price:450,img:"67f10145-e3a8-49a2-abf6-b6bf6604b2c4.jpg", typeID:4, brandId:3, rating: 0},
-            {id:5,	name:"Makita DCS460-45",price:572,img:"939d7a53-fefc-49de-99a3-7ee126c1b558.jpg", typeID:3, brandId:3, rating: 0}
+            {id:5,	name:"Makita DCS460-45",price:572,img:"939d7a53-fefc-49de-99a3-7ee126c1b558.jpg", typeID:3, brandId:3, rating: 0},
+            {id:6,	name:"Тачка Eco-2",price:159,img:"091b53f0-cb23-4602-9b0b-c0b74fcdf223.jpg", typeID:1, brandId:1, rating: 0},
+            {id:7,	name:"Worx WX337",price:277,img:"4cab4e5a-1d82-4532-b73e-404512f3b68b.jpg", typeID:2, brandId:2, rating: 0},
+            {id:8,	name:"WORX WG385E.9",price:250,img:"ccde093e-b8bb-4491-9a53-1cd1bbcd5642.jpg", typeID:3, brandId:2, rating: 0},
+
         ]
         this._selectedType = {}
         this._selectedBrand = {}

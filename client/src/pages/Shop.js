@@ -3,10 +3,10 @@ import Container from "react-bootstrap/Container";
 import {Col, Row} from "react-bootstrap";
 import TypeBar from "../components/TypeBar";
 import ItemList from "../components/ItemList";
-
+import '../styles/Shop.css'
 const Shop = () => {
     return (
-        <Container>
+        <Container className='container-shop'>
             <Row style={{height: 150}}>
                 <Col md={3}>
                     <TypeBar/>

@@ -1,0 +1,33 @@
+.footer {
+    position: relative;
+    margin-top: 72px;
+    margin-bottom: 0;
+    background-color: #2f2f35;
+    padding: 0px;
+    color: #ACADA8;
+    padding: 16px;
+}
+
+.footer-content {
+
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    text-align: left;
+    margin: 10px;
+}
+
+.sub {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.sub p {
+    margin: 5px;
+}
+
+@media screen and (max-height: 120px) {
+    .sub {
+        flex-direction: column;
+    }
+}
