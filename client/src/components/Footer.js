@@ -14,13 +14,19 @@ export const Footer = () => {
                         Гефест
                     </h3>
                     <p>Гефест зарегистрирован компанией под названием IlichBoss Pvt. Ltd.</p>
+
+                    <div>Интернет-магазин</div>
+                    <div>7741 (МТС, Life, А1)</div>
+                    <div>Для заявок:cc@mile.by</div>
+                    <div>Прием звонков: c 8.00 до 22.00</div>
+
                     <div className="sub">
                         <NavLink to={'/'}>About us</NavLink>
                         <NavLink to={'/'}>Способы оплаты</NavLink>
                     </div>
                     <div className='d-flex justify-content-between'>
                         Все прова защищены
-                        <div>© 2023 «Гефест»</div>
+                        <div>© 2023 OAO «Гефест»</div>
                     </div>
                 </div>
             </Container>

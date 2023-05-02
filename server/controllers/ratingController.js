@@ -48,5 +48,6 @@ class RatingController {
         res.json({average: average}) // здесь вы отправляете ответ с общим рейтингом
     }
 
+
 }
 module.exports = new RatingController()

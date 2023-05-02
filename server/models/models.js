@@ -34,6 +34,7 @@ const Brand = sequelize.define('brand', {
 const Rating = sequelize.define('rating', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     rate: {type: DataTypes.INTEGER, allowNull: false},
+    feedback: {type: DataTypes.STRING, allowNull: false},
 })
 
 const ItemInfo = sequelize.define('item_info', {

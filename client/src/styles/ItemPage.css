@@ -1,3 +1,8 @@
+.right-side{
+    margin-left: 100px;
+    margin-top: 46px;
+}
+
 .about_item-container{
     display: flex;
     padding-top: 40px;
@@ -46,10 +51,14 @@
     font-size: 18px;
 }
 
+.price-methods-stores_container{
+    display: flex;
+    flex-direction: column;
+}
+
 .price-methods{
     border-radius: 10px;
-    background-color: #A3A3A3;
-    margin-left: 175px;
+    background-color: #93967A;
     width: 400px;
     height: 500px;
     padding: 16px;
@@ -61,13 +70,16 @@
     color: #FFFFFF;
 }
 
+
+
+
 .availability{
     display: flex;
     margin-left: 25px;
 }
 
 
-.yes_mark{
+.yes_no_mark{
     width: 20px;
     height: 20px;
     margin-right: 5px;
@@ -93,14 +105,30 @@
     padding: 5px;
     text-align: center;
 }
-.buy-quantity button{
+.buy-quantity input[type="button"]{
     background-color: #2f2f35;
     color: #FFFFFF;
     border-radius: 10px;
+    width: 220px;
+    text-align: left;
     height: 55px;
-    padding: 10px;
+    padding: 16px;
     flex-shrink: 0;
 }
+.buy-quantity input[type="button"]:hover{
+    background-color: #f66d52;
+}
+
+.button-image{
+    background-image: url('../res/ItemPage/shop.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    border: none;
+    width: 20px;
+    height: 20px;
+}
+
 .buy_image{
     width: 40px;
     height: 40px;
@@ -151,6 +179,35 @@
 }
 
 
+.shop-container{
+    border-radius: 10px;
+    background-color: #666666;
+    margin-top: 16px;
+    padding: 16px;
+    width: 400px;
+}
+.shop-container > span{
+    display: block;
+    font-size: 24px;
+    margin: 10px auto;
+    color: #F5F5F5;
+    text-align: center;
+}
+
+.show_shops{
+    border-radius: 10px;
+    background-color: #ACADA8;
+    padding: 10px;
+}
+
+.show_shops .item { padding: 10px;display: flex; align-items: center; border-bottom: 1px solid #f66d52}
+.show_shops .item:last-child{border-bottom: 0px}
+
+.show_shops .info_title{ /* исправляем регистр на нижний */ margin-right: 45px; width: 200px; font-size: 18px; font-family: "Arial"}
+
+
+
+
 #feedback-container{
     margin-top:10px;
     display: none;
@@ -176,7 +233,7 @@
 }
 
 .characters-feedback_container{
-    margin-top: -150px;
+
     display: block;
 }
 .characters-feedback-titles-container{
@@ -198,14 +255,24 @@
     background-color: #F5F5F5;
     border-radius: 10px;
     width: 800px;
-    height: 150px;
+    display: flex;
+    flex-direction: column;
+
 }
+
+.characters-feedback .item { padding: 10px;display: flex; align-items: center; font-size: 20px}
+
+.characters-feedback .item:nth-child(even) { background: lightgray; }
+
+.characters-feedback .item:nth-child(odd) { background: #F5F5F5; }
+
+.characters-feedback .info_title{margin-right: 72px; width: 350px;}
 
 .characters_img,.feedback_img{
     margin-top: 5px;
     width: 20px;
     height: 20px;
-    margin-right: 5px;
+    margin-right: 7px;
     background-size: contain;
 }
 .characters_img{
@@ -220,6 +287,37 @@
 .feedback-title:hover .feedback_img{
     background-image: url("../res/ItemPage/comment.gif");
 }
+
+
+#feedback .feedback_about_item{
+    padding: 5px;
+    border-bottom: 1px solid brown;
+    margin: 10px;
+}
+#feedback .feedback_about_item:last-child{
+    border-bottom: 0
+}
+
+
+
+.description-container{
+    margin-top:16px;
+
+
+}
+.description_item{
+    font-size: 18px;
+    border-radius: 10px;
+    margin-top:10px;
+    width: 800px;
+    padding: 16px;
+    background-color: #F5F5F5;
+}
+.description_item p{
+    font-weight: normal;
+    text-align: left;
+}
+
 
 
 
