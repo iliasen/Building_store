@@ -11,6 +11,9 @@ import yes from '../res/ItemPage/yes.png'
 import location from '../res/ItemPage/location.png'
 import wallet from '../res/ItemPage/wallet.png'
 import about from '../res/ItemPage/about.png'
+import Rating from "../components/Rating";
+import {PAYMENT_ROUTE} from "../utils/consts";
+
 
 const ItemPage = () => {
 
@@ -34,7 +37,7 @@ const ItemPage = () => {
 
     const feedbacks = [
         {id:1, user: 'Николай@gmail.com', user_feedback:'Товар полное дерьмо (((', user_rate: 1},
-        {id:2, user: 'Иван@gmail.com', user_feedback:'Неполой прибор', user_rate: 3},
+        {id:2, user: 'Иван@gmail.com', user_feedback:'Неплохой прибор', user_rate: 3},
         {id:3, user: 'Aлексей@gmail.com', user_feedback:'Very good', user_rate: 5},
     ]
 
@@ -150,7 +153,9 @@ const ItemPage = () => {
                                     {feedbacks.map((info) =>
                                         <div key={info.id} className='feedback_about_item'>
                                             <span className='info_title'>{info.user} :</span>
-                                            <div>{info.user_rate}</div>{info.user_feedback}
+                                            <div>
+                                                <Rating rating={info.user_rate} />
+                                            </div>{info.user_feedback}
                                         </div> )} </div>
                             </div>
                         </div>
@@ -204,10 +209,10 @@ const ItemPage = () => {
                                 <Image className='location_wallet_img' src={wallet}/>
                                 <b>Способы оплаты</b>
                                 <div className='image_container'>
-                                    <NavLink to='/'><div className='belcard'></div></NavLink>
-                                    <NavLink to='/'><div className='visa'></div></NavLink>
-                                    <NavLink to='/'><div className='mastercard'></div></NavLink>
-                                    <NavLink to='/'><div className='nal'></div></NavLink>
+                                    <NavLink to={PAYMENT_ROUTE}><div className='belcard'></div></NavLink>
+                                    <NavLink to={PAYMENT_ROUTE}><div className='visa'></div></NavLink>
+                                    <NavLink to={PAYMENT_ROUTE}><div className='mastercard'></div></NavLink>
+                                    <NavLink to={PAYMENT_ROUTE}><div className='nal'></div></NavLink>
                                 </div>
                             </div>
                         </div>

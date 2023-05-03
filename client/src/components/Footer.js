@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/Footer.css"
 import {NavLink} from "react-router-dom";
 import Container from "react-bootstrap/Container";
+import {ABOUT_ROUTE, PAYMENT_ROUTE} from "../utils/consts";
 
 export const Footer = () => {
     return (
@@ -21,8 +22,8 @@ export const Footer = () => {
                     <div>Прием звонков: c 8.00 до 22.00</div>
 
                     <div className="sub">
-                        <NavLink to={'/'}>About us</NavLink>
-                        <NavLink to={'/'}>Способы оплаты</NavLink>
+                        <NavLink to={ABOUT_ROUTE}>About us</NavLink>
+                        <NavLink to={PAYMENT_ROUTE}>Способы оплаты</NavLink>
                     </div>
                     <div className='d-flex justify-content-between'>
                         Все прова защищены

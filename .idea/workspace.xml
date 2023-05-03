@@ -5,12 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da2e4766-0cc2-4c75-bcee-bee778690602" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/components/Rating.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/AboutUs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/Payment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/styles/AboutUs.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/styles/Star_rating.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Footer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/ItemPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/ItemPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/Item.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Item.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/styles/ItemPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/ItemPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/ratingController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/ratingController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/models.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/models.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/Shop.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Shop.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/utils/consts.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/consts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/middleware/authMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/middleware/authMiddleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/brandRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/brandRouter.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +29,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -126,6 +135,10 @@
       <workItem from="1683023244680" duration="700000" />
       <workItem from="1683030621570" duration="1443000" />
       <workItem from="1683040208345" duration="10636000" />
+      <workItem from="1683094400360" duration="3474000" />
+      <workItem from="1683098357994" duration="3038000" />
+      <workItem from="1683105852828" duration="2340000" />
+      <workItem from="1683109773842" duration="2496000" />
     </task>
     <servers />
   </component>

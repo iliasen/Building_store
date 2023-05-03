@@ -1,0 +1,39 @@
+.container-about{
+    height: 100vh;
+}
+
+.title_about{
+    width: 100vw;
+    height: 500px;
+    background-image: url('../res/AboutUsPage/start_image.jpg');
+    background-repeat: no-repeat;
+    background-size: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #F5F5F5;
+}
+.content{
+    margin: 72px 150px;
+    padding: 16px;
+}
+
+.strip{
+    width: 200px;
+    height: 3px;
+    background: brown;
+}
+
+
+.for_what{
+    margin-right: 150px;
+}
+
+.for_what h1{
+    font-size: 48px;
+    font-weight: bold;
+    font-family: "Arial";
+}
+.for_what span{
+    font-size: 18px;
+}
