@@ -24,6 +24,12 @@
     margin-left: auto;
 }
 
+.href_about{
+    text-decoration: none;
+    color: #666666;
+    vertical-align: center;
+}
+
 .href{
     padding: 0;
     color: darkgrey;

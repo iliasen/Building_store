@@ -5,21 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da2e4766-0cc2-4c75-bcee-bee778690602" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/Rating.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/pages/AboutUs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/pages/Payment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/styles/AboutUs.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/styles/Star_rating.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/Slide.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/styles/Payment.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/NavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/AboutUs.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/AboutUs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/Admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Admin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/ItemPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/ItemPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/Item.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Item.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/Payment.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Payment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/AboutUs.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/AboutUs.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/Footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Footer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/ItemList.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/ItemList.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/styles/ItemPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/ItemPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/NavBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/NavBar.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/styles/Shop.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Shop.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/utils/consts.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/consts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/middleware/authMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/middleware/authMiddleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/brandRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/brandRouter.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,6 +139,7 @@
       <workItem from="1683098357994" duration="3038000" />
       <workItem from="1683105852828" duration="2340000" />
       <workItem from="1683109773842" duration="2496000" />
+      <workItem from="1683134717834" duration="10739000" />
     </task>
     <servers />
   </component>

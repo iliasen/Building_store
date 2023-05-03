@@ -43,7 +43,7 @@ const ItemPage = () => {
 
     return (
         <Container>
-            <div className='d-flex'>
+            <div className='item-page-main-container'>
                 <div className='left-side'>
 
                     <div className='about_item-container'>

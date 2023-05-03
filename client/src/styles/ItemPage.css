@@ -1,6 +1,12 @@
+.item-page-main-container{
+    display: flex;
+    margin-bottom: 72px;
+}
+
 .right-side{
     margin-left: 100px;
     margin-top: 46px;
+
 }
 
 .about_item-container{
