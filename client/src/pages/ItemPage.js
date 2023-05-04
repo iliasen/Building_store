@@ -11,7 +11,7 @@ import yes from '../res/ItemPage/yes.png'
 import location from '../res/ItemPage/location.png'
 import wallet from '../res/ItemPage/wallet.png'
 import about from '../res/ItemPage/about.png'
-import Rating from "../components/Rating";
+import Rating from "../components/modals/Rating";
 import {PAYMENT_ROUTE} from "../utils/consts";
 
 

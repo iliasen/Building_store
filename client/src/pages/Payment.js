@@ -1,11 +1,11 @@
 import React from "react";
 
-import '../styles/Payment.css'
+import '../styles/Payment_Guarantees.css'
 const Payment = () => {
     return (
-        <div className='payment-back'>
-                <div className="payment-container">
-                    <div className='payment-context'>
+        <div className='payment-guarantees-back'>
+                <div className="payment-guarantees-container">
+                    <div className='context_margin'>
                     <h1>Оплата в интернет-магазине</h1>
                     <div>Мы позаботились о том, чтобы оплата покупки была доступна в той форме, которую предпочитаете лично <strong>Вы</strong>. Независимо от выбранной формы оплаты, расчет производится только в белорусских рублях.</div>
                     <p/>

@@ -5,21 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da2e4766-0cc2-4c75-bcee-bee778690602" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/Slide.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/styles/Payment.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/modals/CreateBrand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/modals/CreateItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/modals/CreateType.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/Guarantees.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/AppRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/AppRouter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/NavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Rating.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/modals/Rating.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Slide.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/modals/Slide.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/AboutUs.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/AboutUs.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/Admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Admin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/ItemPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/ItemPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/Payment.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Payment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/AboutUs.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/AboutUs.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/res/AboutUsPage/start.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/UserStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/UserStore.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/styles/Footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Footer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/ItemList.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/ItemList.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/ItemPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/ItemPage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/styles/NavBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/NavBar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/Shop.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Shop.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/Payment.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Payment_Guarantees.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/utils/consts.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/consts.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +34,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -63,6 +68,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Work\git\Building_store\client\src\components\modals" />
       <recent name="C:\Work\git\Building_store\client\src\res\ItemPage" />
       <recent name="C:\Work\git\Building_store\client\src" />
       <recent name="C:\Work\git\Building_store\Server\models" />
@@ -139,7 +145,11 @@
       <workItem from="1683098357994" duration="3038000" />
       <workItem from="1683105852828" duration="2340000" />
       <workItem from="1683109773842" duration="2496000" />
-      <workItem from="1683134717834" duration="10739000" />
+      <workItem from="1683134717834" duration="11022000" />
+      <workItem from="1683188817807" duration="1055000" />
+      <workItem from="1683192322083" duration="2760000" />
+      <workItem from="1683207203866" duration="476000" />
+      <workItem from="1683211071895" duration="1949000" />
     </task>
     <servers />
   </component>

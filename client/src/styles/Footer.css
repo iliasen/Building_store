@@ -18,7 +18,10 @@
 
 .sub {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+
 }
 
 .sub p {

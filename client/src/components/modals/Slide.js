@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import {Image} from "react-bootstrap";
 
-import b1 from "../res/AboutUsPage/build_1.jpg";
-import b2 from "../res/AboutUsPage/build_2.webp";
-import b3 from "../res/AboutUsPage/build_3.webp";
+import b1 from "../../res/AboutUsPage/build_1.jpg";
+import b2 from "../../res/AboutUsPage/build_2.webp";
+import b3 from "../../res/AboutUsPage/build_3.webp";
 
 function Slideshow() {
     const [slideIndex, setSlideIndex] = useState(0); // использовать переменную состояния для индекса слайда

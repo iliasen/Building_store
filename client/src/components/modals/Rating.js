@@ -1,10 +1,10 @@
 import React from 'react';
 import {Image} from "react-bootstrap";
 
-import true_star from '../res/ItemPage/black_star.png'
-import false_star from '../res/ItemPage/star.png'
+import true_star from '../../res/ItemPage/black_star.png'
+import false_star from '../../res/ItemPage/star.png'
 
-import  '../styles/Star_rating.css'
+import  '../../styles/Star_rating.css'
 const StarRating = ({ rating }) => {
     const MAX_STARS = 5;
     const fullStars = Math.floor(rating);

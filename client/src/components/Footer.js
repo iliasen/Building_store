@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/Footer.css"
 import {NavLink} from "react-router-dom";
 import Container from "react-bootstrap/Container";
-import {ABOUT_ROUTE, ADMIN_ROUTE, PAYMENT_ROUTE} from "../utils/consts";
+import {ABOUT_ROUTE, ADMIN_ROUTE, GUARANTEES_ROUTE, PAYMENT_ROUTE} from "../utils/consts";
 
 export const Footer = () => {
     return (
@@ -14,18 +14,26 @@ export const Footer = () => {
                             fontSize: "2em"}}>
                         Гефест
                     </h3>
-                    <p>Гефест зарегистрирован компанией под названием IlichBoss Pvt. Ltd.</p>
+                    <div className='d-flex mb-4 justify-content-between'>
+                        <div>
+                            <div>Интернет-магазин</div>
+                            <div>7748 (МТС, Life, А1)</div>
+                            <div>Для заявок:cc@gefest.by</div>
+                            <div>Прием звонков: c 8.00 до 22.00</div>
+                        </div>
 
-                    <div>Интернет-магазин</div>
-                    <div>7748 (МТС, Life, А1)</div>
-                    <div>Для заявок:cc@gefest.by</div>
-                    <div>Прием звонков: c 8.00 до 22.00</div>
 
-                    <div className="sub">
-                        <NavLink to={ABOUT_ROUTE}>About us</NavLink>
-                        <NavLink to={ADMIN_ROUTE}>Администрация</NavLink>
-                        <NavLink to={PAYMENT_ROUTE}>Способы оплаты</NavLink>
+                        <p>Гефест зарегистрирован компанией под названием IlichBoss Pvt. Ltd.</p>
+
+                        <div className="sub">
+                            <NavLink className='href' to={ABOUT_ROUTE}>About us</NavLink>
+                            <NavLink className='href' to={ADMIN_ROUTE}>Администрация</NavLink>
+                            <NavLink className='href' to={PAYMENT_ROUTE}>Способы оплаты</NavLink>
+                            <NavLink className='href' to={GUARANTEES_ROUTE}>Гарантии</NavLink>
+                        </div>
+
                     </div>
+
                     <div className='d-flex justify-content-between'>
                         Все прова защищены
                         <div>© 2023 OAO «Гефест»</div>

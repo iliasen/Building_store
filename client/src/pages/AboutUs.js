@@ -7,7 +7,7 @@ import b2 from '../res/AboutUsPage/build_2.webp'
 import b3 from '../res/AboutUsPage/build_3.webp'
 import '../styles/AboutUs.css'
 
-import Slideshow from "../components/Slide";
+import Slideshow from "../components/modals/Slide";
 
 const AboutUs = () => {
     return (

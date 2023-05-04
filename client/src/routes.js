@@ -7,6 +7,7 @@ import {
     LOGIN_ROUTE,
     PAYMENT_ROUTE,
     REGISTRATION_ROUTE,
+    GUARANTEES_ROUTE,
     SHOP_ROUTE
 } from "./utils/consts";
 import Basket from "./pages/Basket";
@@ -15,6 +16,7 @@ import Auth from "./pages/Auth";
 import ItemPage from "./pages/ItemPage";
 import AboutUs from "./pages/AboutUs";
 import Payment from "./pages/Payment";
+import Guarantees from "./pages/Guarantees";
 
 export const authRoutes = [
     {
@@ -52,4 +54,8 @@ export const publicRoutes = [
         path: PAYMENT_ROUTE,
         Component: Payment
     },
+    {
+        path: GUARANTEES_ROUTE,
+        Component: Guarantees
+    }
 ]

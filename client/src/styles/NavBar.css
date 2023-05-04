@@ -30,6 +30,12 @@
     vertical-align: center;
 }
 
+.href_a{
+    padding: 0;
+    color: #f66d52;
+    text-decoration: none;
+}
+
 .href{
     padding: 0;
     color: darkgrey;
