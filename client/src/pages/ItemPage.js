@@ -1,32 +1,28 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Container from "react-bootstrap/Container";
 import {Image} from "react-bootstrap";
-import {NavLink} from "react-router-dom";
+import {NavLink, useParams} from "react-router-dom";
+import {PAYMENT_ROUTE} from "../utils/consts";
+import {fetchOneItem} from "../http/itemAPI";
 
+import Rating from "../components/modals/Rating";
 import '../styles/ItemPage.css'
 
 import no from '../res/ItemPage/no.png'
 import yes from '../res/ItemPage/yes.png'
-// import shop from '../res/ItemPage/shop.png'
 import location from '../res/ItemPage/location.png'
 import wallet from '../res/ItemPage/wallet.png'
 import about from '../res/ItemPage/about.png'
-import Rating from "../components/modals/Rating";
-import {PAYMENT_ROUTE} from "../utils/consts";
+
 
 
 const ItemPage = () => {
 
-    const item={id:1,	name:"Тачка Eco-2",price:159,img:"091b53f0-cb23-4602-9b0b-c0b74fcdf223.jpg", typeID:1, brandId:1, rating: 0, description:'\n' +
-            '    Бензопила GCS-2450 предназначена для распила древесных материалов: для спиливания деревьев, для поперечной распиловки стволов и отсекания веток. Максимальная толщина бревна, с которой способен справиться инструмент, напрямую зависит от длины используемой направляющей шины.\n'}
-    const description = [
-        {id:1, title: "Тип", description: `${item.typeID}`},
-        {id:2, title: "Торговая марка", description: `${item.brandId}`},
-        {id:3, title: "Мощность (Вт)", description: '12'},
-        {id:4, title: "Аккумулятор в комплекте", description: 'есть'},
-        {id:5, title: "Ёмкость аккумулятора (А/ч)", description: '1.5'},
-        {id:6, title: "Скорость вращения (об/мин)", description: '1700'}
-    ]
+    const [item, setItem] = useState({info: []})
+    const {id} = useParams()
+    useEffect(() => {
+        fetchOneItem(id).then(data => setItem(data))
+    }, [])
 
     const shops = [
         {id:1, location:"Сурганова д.5",flag: true},
@@ -47,7 +43,7 @@ const ItemPage = () => {
                 <div className='left-side'>
 
                     <div className='about_item-container'>
-                        <Image className='item-image-300' src={item.img}/>
+                        <Image className='item-image-300' src={process.env.REACT_APP_API_URL + item.img}/>
                         <div className='head'>
                             <div className='name-article'>
                                 <h1>{item.name}</h1>
@@ -143,7 +139,7 @@ const ItemPage = () => {
                             </div>
                             <div className='characters-feedback'>
                                 <div id='characters'>
-                                    {description.map((info) =>
+                                    {item.info.map((info) =>
                                         <div key={info.id} className='item'>
                                             <span className='info_title'>{info.title}:</span> {info.description}
                                         </div>

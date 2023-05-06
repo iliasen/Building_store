@@ -28,11 +28,11 @@ const NavBar = observer(() => {
                 {user.Auth ?
                         (<Nav className='href-container'>
                             <NavLink className='href' to={BASKET_ROUTE}>Корзина</NavLink>
-                            <NavLink className='href' to='#login'>Личный кабинет</NavLink>
+                            <NavLink className='href' to={''}>{user.Auth} Личный кабинет</NavLink>
                         </Nav>)
                     :
                         (<Nav className='href-container'>
-                            <NavLink className='href' to = {LOGIN_ROUTE} onClick={()=> user.setAuth(true)}>Авторизация</NavLink>
+                            <NavLink className='href' to = {LOGIN_ROUTE} >Авторизация</NavLink>
                         </Nav>)
                 }
                 </Navbar.Collapse>

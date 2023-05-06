@@ -11,7 +11,7 @@ const Item = ({item}) => {
     return (
         <Col md={3} onClick={() => navigate(ITEM_ROUTE+ '/' + item.id)}>
             <div className='items-container'>
-                <Image className='Item_img' src={item.img}/>
+                <Image className='Item_img' src={process.env.REACT_APP_API_URL + item.img}/>
                 <div className='description'>
                     <header className='type'>Item</header>
                     <div className='rate_container'>

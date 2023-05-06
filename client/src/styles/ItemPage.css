@@ -187,7 +187,7 @@
 
 .shop-container{
     border-radius: 10px;
-    background-color: #666666;
+    background-color: #EAE3DD;
     margin-top: 32px;
     padding: 16px;
     width: 400px;
@@ -196,13 +196,13 @@
     display: block;
     font-size: 24px;
     margin: 10px auto;
-    color: #F5F5F5;
+
     text-align: center;
 }
 
 .show_shops{
     border-radius: 10px;
-    background-color: #ACADA8;
+    background-color: #FFFFFF;
     padding: 10px;
 }
 
