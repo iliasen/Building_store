@@ -1,7 +1,7 @@
-.list{
-    display: flex;
-    margin-top: 55px;
-    background-color: #EAE3DD;
-    border-radius: 10px;
-    padding: 16px;
+.list {
+  display: flex;
+  margin-top: 55px;
+  background-color: #eae3dd;
+  border-radius: 10px;
+  padding: 16px;
 }

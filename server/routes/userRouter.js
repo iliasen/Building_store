@@ -6,6 +6,7 @@ const authMiddleware = require('../middleware/authMiddleware')//проверка
 router.post('/registration', UserController.registration)
 router.post('/login', UserController.login)
 router.get('/auth',authMiddleware, UserController.check)
-// router.delete('/',)// можно добавить
+router.put('/change',authMiddleware, UserController.changePassword)
+router.delete('/delete_account/:id',authMiddleware, UserController.del_account)
 
 module.exports = router

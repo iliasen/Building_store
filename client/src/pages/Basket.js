@@ -1,11 +1,8 @@
-import React from 'react';
+import React from 'react'
+import Container from "react-bootstrap/Container";
 
 const Basket = () => {
-    return (
-        <div>
-            Basket
-        </div>
-    );
-};
+  return <Container>Basket</Container>
+}
 
-export default Basket;
+export default Basket

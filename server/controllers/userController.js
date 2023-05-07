@@ -1,7 +1,7 @@
 const ApiError = require('../error/ApiError')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-const {User,Basket} = require('../models/models')
+const {User,Basket, Brand} = require('../models/models')
 
 const generateJwt = (id, email, role) => {
     return jwt.sign(
@@ -43,6 +43,31 @@ class UserController{
     async check(req,res,next){
         const token = generateJwt(req.user.id, req.user.email, req.user.role)
         return res.json({token})
+    }
+
+    async changePassword(req, res, next) {
+        const { email, oldPassword, newPassword } = req.body;
+        const user = await User.findOne({ where: { email } });
+        if (!user) {
+            return next(ApiError.internal("Пользователь не найден"));
+        }
+        const comparePassword = bcrypt.compareSync(oldPassword, user.password);
+        if (!comparePassword) {
+            return next(ApiError.internal("Не верный пароль"));
+        }
+        const hashPassword = await bcrypt.hash(newPassword, 5);
+        await User.update({ password: hashPassword }, { where: { email } });
+        const token = generateJwt(user.id, user.email, user.role);
+        return res.json({ token });
+    }
+
+    async del_account(req,res,next){
+        const {id} = req.params
+        if(!id){
+            return next(ApiError.internal('Ошибка. Необходимо указать id пользователя'))
+        }
+        await User.destroy({where:{id}})
+        res.json({message: 'Пользователь успешно удалён'})
     }
 }
 

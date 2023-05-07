@@ -1,57 +1,75 @@
-.brand{
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-    align-items: center;
-    padding: 0;
+.brand {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  align-items: center;
+  padding: 0;
 }
-.brand:hover{
-    color: white;
-    text-decoration: none;
-    font-size: 20px
+.brand:hover {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
 }
-.brand:focus{
-    color: white;
-    text-decoration: none;
-    font-size: 20px
+.brand:focus {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
 }
-.slogan{
-    padding-left: 10px;
-    color: darkgrey;
-}
-
-.href-container{
-    margin-left: auto;
+.slogan {
+  padding-left: 10px;
+  color: darkgrey;
 }
 
-.href_about{
-    text-decoration: none;
-    color: #666666;
-    vertical-align: center;
+.href-container {
+  margin-left: auto;
 }
 
-.href_a{
-    padding: 0;
-    color: #f66d52;
-    text-decoration: none;
+.href_about {
+  text-decoration: none;
+  color: #666666;
+  vertical-align: center;
 }
 
-.href{
-    padding: 0;
-    color: darkgrey;
-    text-decoration: none;
-    margin-left: 10px;
-}
-.href:hover{
-    color: white;
-}
-.href.active{
-    color: white;
-    outline: none;
+.href_a {
+  padding: 0;
+  color: #f66d52;
+  text-decoration: none;
 }
 
-.image{
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
+
+.href {
+  padding: 0;
+  color: darkgrey;
+  text-decoration: none;
+  margin-left: 10px;
+}
+.href:hover {
+  color: white;
+}
+.href.active {
+  color: white;
+  outline: none;
+}
+
+.image {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.profile_image {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+  margin-top: 2px;
+  background-image: url('../res/NavBar/profile.png');
+  background-size: contain;
+}
+
+.href:hover .profile_image{
+  background-image: url('../res/NavBar/profile-after.png');
+}
+
+.href.active .profile_image{
+  background-image: url('../res/NavBar/profile-after.png');
 }

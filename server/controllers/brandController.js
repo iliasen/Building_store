@@ -12,7 +12,7 @@ class BrandController{
         return res.json(brands)
     }
      async del(req,res,next){
-        const {id} = req.params // здесь вы получаете brandId из параметров URL
+        const {id} = req.params //brandId из параметров URL
         if(!id){
             return next(ApiError.internal('Ошибка. Необходимо указать id бренда'))
         }
