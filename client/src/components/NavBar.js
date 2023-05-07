@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import {NavLink} from "react-router-dom";
-import {ABOUT_ROUTE, BASKET_ROUTE, LOGIN_ROUTE, SHOP_ROUTE} from "../utils/consts";
+import {ABOUT_ROUTE, ACCOUNT_ROUTE, BASKET_ROUTE, LOGIN_ROUTE, SHOP_ROUTE} from "../utils/consts";
 
 import "../styles/NavBar.css"
 
@@ -28,7 +28,7 @@ const NavBar = observer(() => {
                 {user.Auth ?
                         (<Nav className='href-container'>
                             <NavLink className='href' to={BASKET_ROUTE}>Корзина</NavLink>
-                            <NavLink className='href' to={''}>{user.Auth} Личный кабинет</NavLink>
+                            <NavLink className='href' to={ACCOUNT_ROUTE}>{user.user.email}</NavLink>
                         </Nav>)
                     :
                         (<Nav className='href-container'>

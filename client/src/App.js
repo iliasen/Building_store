@@ -12,8 +12,9 @@ const App = observer(() => {
     const [loading, setLoading] = useState(true)
 
     useEffect(() =>{//подзагрузка
-            check().then(data =>{
-                user.setUser(true)
+        //для иметации запроста можно использовать setTimeout(()=>{},1000)
+            check().then(data =>{ //для иметации запроста можно использовать setTimeout(()=>{},1000)
+                user.setUser(data)
                 user.setAuth(true)
             }).finally(() => setLoading(false))//запрос на сервер
     }, [])//так как массив пустой то подзагрузка будет 1 раз при запуске

@@ -10,3 +10,5 @@ export const ABOUT_ROUTE = '/about'
 export const PAYMENT_ROUTE = '/payment'
 
 export const GUARANTEES_ROUTE = '/guarantees'
+
+export const ACCOUNT_ROUTE = '/account'
