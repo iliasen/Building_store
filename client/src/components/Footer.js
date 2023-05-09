@@ -52,7 +52,7 @@ export const Footer = () => {
 
           <div className="d-flex justify-content-between">
             Все прова защищены
-            <div>© 2023 OAO «Гефест»</div>
+            <div>© 2018-2023 OAO «Гефест»</div>
           </div>
         </div>
       </Container>

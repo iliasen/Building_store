@@ -211,12 +211,12 @@ const ItemPage = () => {
                 <div className="title">Отзывы</div>
               </div>
             </div>
+
             <div className="characters-feedback">
               <div id="characters">
                 {item.info.map((info) => (
                   <div key={info.id} className="item">
-                    <span className="info_title">{info.title}:</span>{' '}
-                    {info.description}
+                    <span className="info_title">{info.title}:</span>{' '}{info.description}
                   </div>
                 ))}
               </div>
@@ -242,7 +242,7 @@ const ItemPage = () => {
             ></Image>
             <span>Описание</span>
             <div className="description_item">
-              <p>{item.description}</p>
+              <p>{item.about}</p>
               <p>
                 Внимание! Информация о товарах, представленная на нашем сайте,
                 получена из открытых источников, в том числе каталогов

@@ -7,7 +7,7 @@ import '../styles/AccountPage.css'
 import Delete from "../components/modals/DelAccount";
 import ChangePass from "../components/modals/ChangePass";
 const AccountPage = () => {
-  const { user } = useContext(Context)
+  const {user} = useContext(Context)
   const [delVisible, setDelVisible] = useState(false)
   const [changeVisible, setChangeVisible] = useState(false)
 
@@ -27,17 +27,20 @@ const AccountPage = () => {
   <div className='Account'>
       <div className="User_data">
         <div className='Logo_account'></div>
-        <div className='mb-2' style={{color: '#F5F5F5'}}>
+        <div className='User_info'>
           <div>email:ㅤ{user.user.email}</div>
           <div>id:ㅤ{user.user.id}</div>
           <div>role:ㅤ{user.user.role}</div>
         </div>
-        <div className='mb-2'>
-          <div className='switch_account_button' onClick={switch_account}>Сменить аккаунт</div>
+        <div className='interactions_with_acc'>
           <div className='switch_account_button' onClick={() => setChangeVisible(true)}>Изменить пароль</div>
+          <div className='logOut_button' onClick={() => setDelVisible(true)}>Удалить аккаунт</div>
         </div>
-        <div className='logOut_button' onClick={logOut}>Выйти</div>
-        <div className='logOut_button' onClick={() => setDelVisible(true)}>Удалить аккаунт</div>
+        <div className='change_acc_buttons'>
+          <button id='change' onClick={switch_account}>Сменить аккаунт</button>
+          <button id='logOut' onClick={logOut}>Выйти</button>
+        </div>
+
         <Delete show={delVisible} onHide={() => setDelVisible(false)}></Delete>
         <ChangePass show={changeVisible} onHide={() => setChangeVisible(false)}></ChangePass>
       </div>

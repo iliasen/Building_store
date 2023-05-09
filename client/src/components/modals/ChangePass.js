@@ -21,7 +21,6 @@ const ChangePass = ({ show, onHide }) => {
             data = await change(email,oldPassword, newPassword)
             user.setUser(data)
             console.log('Change password')
-            nav(SHOP_ROUTE)
 
         } catch (e) {
             alert(e.response.data.message)
@@ -32,15 +31,15 @@ const ChangePass = ({ show, onHide }) => {
         <Modal show={show} onHide={onHide} centered>
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    Добавить тип
+                    Изменение пароля
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <Form>
-                    <Form.Control className='mb-2' placeholder={'Введите старный пароль'} value={oldPassword}
+                    <Form.Control className='mb-2' type='password' placeholder={'Введите старный пароль'} value={oldPassword}
                                   onChange={(e) => setOldPassword(e.target.value)}/>
 
-                    <Form.Control placeholder={'Введите новый пароль'} value={newPassword}
+                    <Form.Control placeholder={'Введите новый пароль'} type='password' value={newPassword}
                                   onChange={(e) => setNewPassword(e.target.value)}/>
                 </Form>
             </Modal.Body>

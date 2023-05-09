@@ -6,19 +6,19 @@ const fs = require('fs')//удаление страрого изображени
 class ItemController {
     async create(req, res, next) {
         try {
-            let {name, price, brandId, typeId, info} = req.body
+            let {name, price, brandId, typeId,about, info} = req.body
             const {img} = req.files
             let fileName = uuid.v4() + ".jpg"
             img.mv(path.resolve(__dirname, '..', 'static', fileName))
-            const item = await Item.create({name, price, brandId, typeId, img: fileName});
+            const item = await Item.create({name, price, brandId, typeId,about, img: fileName});
 
             if (info) {
-                info = JSON.parse(info)//обратно возвращаем Json объект
+                info = JSON.parse(info)//Json объект разбиваем на массив
                 info.forEach(i =>
                     ItemInfo.create({
                         title: i.title,
                         description: i.description,
-                        Id: item.id
+                        itemId: item.id,
                     })
                 )
             }

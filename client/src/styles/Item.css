@@ -28,6 +28,8 @@
   box-sizing: content-box;
   margin: 16px;
   width: 150px;
+  height: 220px;
+
 }
 .items-container:hover {
   scale: 1.2;

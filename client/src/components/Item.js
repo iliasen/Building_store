@@ -16,7 +16,7 @@ const Item = ({ item }) => {
           src={process.env.REACT_APP_API_URL + item.img}
         />
         <div className="description">
-          <header className="type">{item.brand} brand</header>
+          <header className="type">{item._brands}Brand</header>
           <div className="rate_container">
             <div>{item.rating}</div>
             <Image className="star_img" src={rate} />
