@@ -7,7 +7,6 @@ import '../styles/Shop.css'
 import { observer } from 'mobx-react-lite'
 import { Context } from '../index'
 import { fetchBrands, fetchItems, fetchTypes } from '../http/itemAPI'
-import Pages from "../components/Pages";
 
 const Shop = observer(() => {
   const { item } = useContext(Context)
@@ -15,18 +14,27 @@ const Shop = observer(() => {
   useEffect(() => {
     fetchTypes().then((data) => item.setTypes(data)) //передаем то что вернулось в запросе
     fetchBrands().then((data) => item.setBrands(data))
-    fetchItems(null, null , 1 ,1).then((data) =>{
+    fetchItems(null, null , 1 ,2).then((data) =>{
         item.setItems(data.rows)
         item.setTotalCount(data.count)
     })
   }, [])
 
   useEffect(() => {
-    fetchItems(item.selectedType.id, item.selectedBrand.id, item.page, 2).then(data => {
-      item.setItems(data.rows)
-      item.setTotalCount(data.count)
-    })
-  }, [item.page, item.selectedType, item.selectedBrand,])
+    // Проверяем, что item.selectedType и item.selectedBrand не равны null
+    if (item.selectedType && item.selectedBrand) {
+      fetchItems(item.selectedType.id, item.selectedBrand.id, item.page, 2).then(data => {
+        item.setItems(data.rows)
+        item.setTotalCount(data.count)
+      })
+    }else{// если пустой
+      fetchItems(null, null , item.page ,2).then((data) =>{
+        item.setItems(data.rows)
+        item.setTotalCount(data.count)
+      })
+    }
+  }, [item.page, item.selectedType, item.selectedBrand])
+
 
   return (
     <Container className="container-shop">
@@ -36,7 +44,6 @@ const Shop = observer(() => {
         </Col>
         <Col md={9}>
           <ItemList />
-          <Pages/>
         </Col>
       </Row>
     </Container>

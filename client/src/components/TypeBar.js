@@ -1,11 +1,24 @@
-import React, { useContext } from 'react'
+import React, {useContext} from 'react'
 import { observer } from 'mobx-react-lite'
 import { Context } from '../index'
 import { ListGroup } from 'react-bootstrap'
 import '../styles/TypeBar.css'
+import {fetchItems} from "../http/itemAPI";
 
 const TypeBar = observer(() => {
   const { item } = useContext(Context)
+
+
+
+
+  const reset= () => {
+    let items = document.querySelectorAll(".guidance");
+    items.forEach(item => {
+      item.classList.remove("active");
+    });
+    item.setSelectedType(null)
+    item.setSelectedBrand(null)
+  }
   return (
     <div className="type-bar-container">
       <div className="main">
@@ -14,7 +27,7 @@ const TypeBar = observer(() => {
           {item.types.map((type) => (
             <ListGroup.Item
               className="guidance"
-              active={type.id === item.selectedType.id}
+              active={type.id === item.selectedType?.id}
               onClick={() => item.setSelectedType(type)}
               key={type.id}
             >
@@ -27,7 +40,7 @@ const TypeBar = observer(() => {
           {item.brands.map((brand) => (
             <ListGroup.Item
               className="guidance"
-              active={brand.id === item.selectedBrand.id}
+              active={brand.id === item.selectedBrand?.id}
               onClick={() => item.setSelectedBrand(brand)}
               key={brand.id}
             >
@@ -36,6 +49,7 @@ const TypeBar = observer(() => {
           ))}
         </ListGroup>
       </div>
+      <button className='reset-button' onClick={reset}>Очистить</button>
     </div>
   )
 })

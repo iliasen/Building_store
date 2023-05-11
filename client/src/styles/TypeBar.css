@@ -102,3 +102,15 @@ div.crossed:hover p.crossed-text:before {
     transform: translateY(0);
   }
 }
+
+.reset-button{
+  background-color: #f7765c;
+  color: black;
+  width: 100px;
+  margin: 16px 50px;
+  font-size: 18px;
+  border-radius: 16px
+}
+.reset-button:hover{
+  background-color: #f66d52;
+}

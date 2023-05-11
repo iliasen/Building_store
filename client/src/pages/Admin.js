@@ -12,11 +12,11 @@ const Admin = () => {
   const [itemVisible, setItemVisible] = useState(false)
 
   return (
-    <Container className="d-flex flex-column justify-content-center container-shop">
+    <Container className="d-flex flex-column justify-content-center container-shop mt-5" style={{padding:235}}>
       <Image
         src={logo}
         style={{ width: 300, height: 300 }}
-        className="m-auto"
+        className="m-auto mt-5"
       ></Image>
       <div className="d-flex flex-column">
         <Button
@@ -40,6 +40,43 @@ const Admin = () => {
         >
           Добавить товар
         </Button>
+        <Button
+            variant={'outline-success'}
+            className="mt-4 p-2"
+            //onClick={() => setItemVisible(true)}
+        >
+          Изменить тип
+        </Button>
+        <Button
+            variant={'outline-success'}
+            className="mt-4 p-2"
+            //onClick={() => setItemVisible(true)}
+        >
+          Изменить бренд
+        </Button>
+        <Button
+            variant={'outline-danger'}
+            className="mt-4 p-2"
+            onClick={() => setItemVisible(true)}
+        >
+          Удалить тип
+        </Button>
+        <Button
+            variant={'outline-danger'}
+            className="mt-4 p-2"
+            onClick={() => setItemVisible(true)}
+        >
+          Удалить бренд
+        </Button>
+        <Button
+            variant={'outline-danger'}
+            className="mt-4 p-2"
+            onClick={() => setItemVisible(true)}
+        >
+          Удалить товар
+        </Button>
+
+
         <CreateBrand
           show={brandVisible}
           onHide={() => setBrandVisible(false)}
