@@ -5,12 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da2e4766-0cc2-4c75-bcee-bee778690602" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/components/modals/ChangeBrand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/modals/ChangeType.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/modals/DelBrand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/modals/DelItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/modals/DelType.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/ItemList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ItemList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/TypeBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/TypeBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Item.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Item.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/http/itemAPI.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/http/itemAPI.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/Admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/Shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Shop.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/TypeBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/TypeBar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/ItemStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/ItemStore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/itemController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/itemController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/typeController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/typeController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/typeRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/typeRouter.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +53,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;TODO_SCOPE&quot;: &quot;Project Files&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Work/git/study_web/Objects&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Work/git/Building_store/client/src/components/modals&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -58,6 +66,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Work\git\Building_store\client\src\components\modals" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Work\git\Building_store\client\src\components\modals" />
       <recent name="C:\Work\git\Building_store\client\src\res\ItemPage" />
@@ -157,7 +168,9 @@
       <workItem from="1683621991591" duration="1897000" />
       <workItem from="1683627366537" duration="937000" />
       <workItem from="1683644188926" duration="546000" />
-      <workItem from="1683792994217" duration="8569000" />
+      <workItem from="1683792994217" duration="16280000" />
+      <workItem from="1683882748989" duration="5748000" />
+      <workItem from="1683906231415" duration="5765000" />
     </task>
     <servers />
   </component>

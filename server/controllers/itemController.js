@@ -64,7 +64,14 @@ class ItemController {
         if (!id) {
             return next(ApiError.internal("Ошибка. Не задан id"))
         }
-        const item = await Item.destroy({where: {id}})
+        const item = await Item.findByPk(id)
+        let oldFile = path.resolve(__dirname, '..', 'static', item.img)
+        fs.unlink(oldFile, (err) => {
+            if (err) {
+                console.error(err)
+            }
+        })
+        const itemDel = await Item.destroy({where: {id}})
         res.json({massage: "товар успешно удалён"})
 
     }

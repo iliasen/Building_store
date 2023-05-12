@@ -5,11 +5,21 @@ import CreateItem from '../components/modals/CreateItem'
 import CreateType from '../components/modals/CreateType'
 
 import logo from '../res/лого.png'
+import ChangeType from "../components/modals/ChangeType";
+import ChangeBrand from "../components/modals/ChangeBrand";
+import DelType from "../components/modals/DelType";
+import DelBrand from "../components/modals/DelBrand";
+import DelItem from "../components/modals/DelItem";
 
 const Admin = () => {
   const [brandVisible, setBrandVisible] = useState(false)
+  const [brandChangeVisible, setBrandChangeVisible] = useState(false)
+  const [brandDelVisible, setBrandDelVisible] = useState(false)
   const [typeVisible, setTypeVisible] = useState(false)
+  const [typeChangeVisible, setTypeChangeVisible] = useState(false)
+  const [typeDelVisible, setTypeDelVisible] = useState(false)
   const [itemVisible, setItemVisible] = useState(false)
+  const [itemDelVisible, setItemDelVisible] = useState(false)
 
   return (
     <Container className="d-flex flex-column justify-content-center container-shop mt-5" style={{padding:235}}>
@@ -43,46 +53,48 @@ const Admin = () => {
         <Button
             variant={'outline-success'}
             className="mt-4 p-2"
-            //onClick={() => setItemVisible(true)}
+            onClick={() => setTypeChangeVisible(true)}
         >
           Изменить тип
         </Button>
         <Button
             variant={'outline-success'}
             className="mt-4 p-2"
-            //onClick={() => setItemVisible(true)}
+            onClick={() =>  setBrandChangeVisible(true)}
         >
           Изменить бренд
         </Button>
         <Button
             variant={'outline-danger'}
             className="mt-4 p-2"
-            onClick={() => setItemVisible(true)}
+            onClick={() => setTypeDelVisible(true)}
         >
           Удалить тип
         </Button>
         <Button
             variant={'outline-danger'}
             className="mt-4 p-2"
-            onClick={() => setItemVisible(true)}
+            onClick={() => setBrandDelVisible(true)}
         >
           Удалить бренд
         </Button>
         <Button
             variant={'outline-danger'}
             className="mt-4 p-2"
-            onClick={() => setItemVisible(true)}
+            onClick={() => setItemDelVisible(true)}
         >
           Удалить товар
         </Button>
 
 
-        <CreateBrand
-          show={brandVisible}
-          onHide={() => setBrandVisible(false)}
-        />
-        <CreateItem show={itemVisible} onHide={() => setItemVisible(false)} />
         <CreateType show={typeVisible} onHide={() => setTypeVisible(false)} />
+        <ChangeType show={typeChangeVisible} onHide={() => setTypeChangeVisible(false)} />
+        <DelType show={typeDelVisible} onHide={() => setTypeDelVisible(false)} />
+        <CreateBrand show={brandVisible} onHide={() => setBrandVisible(false)}/>
+        <ChangeBrand show={brandChangeVisible} onHide={() => setBrandChangeVisible(false)} />
+        <DelBrand show={brandDelVisible} onHide={() => setBrandDelVisible(false)}/>
+        <CreateItem show={itemVisible} onHide={() => setItemVisible(false)} />
+        <DelItem show={itemDelVisible} onHide={() => setItemDelVisible(false)}/>
       </div>
     </Container>
   )

@@ -13,8 +13,17 @@ class TypeController{
         return res.json(types)
     }
 
+    async getOne(req,res,next){
+        const {id} = req.params
+        if(!id){
+            return next(ApiError.internal('Ошибка. Необходимо указать id типа товара'))
+        }
+        const type = await Type.findOne({where:{id}})
+        return res.json(type)
+    }
+
     async del(req,res,next){
-        const {id} = req.params // здесь вы получаете brandId из параметров URL
+        const {id} = req.params // Id из параметров URL
         if(!id){
             return next(ApiError.internal('Ошибка. Необходимо указать id типа товара'))
         }
