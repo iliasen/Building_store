@@ -9,10 +9,9 @@ import {fetchOneType} from "../http/itemAPI";
 const Item = ({ item }) => {
   const navigate = useNavigate()
 
-  const [type_name, setType_name] = React.useState(null); // initialize state with null
+  const [type_name, setType_name] = React.useState(null);
 
   React.useEffect(() => {
-    // fetch data and set state when promise resolves
     fetchOneType(item.typeId).then(type => {
       setType_name(type.name);
     });

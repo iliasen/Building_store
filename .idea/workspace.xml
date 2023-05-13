@@ -5,20 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da2e4766-0cc2-4c75-bcee-bee778690602" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/modals/ChangeBrand.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/modals/ChangeType.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/modals/DelBrand.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/modals/DelItem.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/modals/DelType.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/modals/AvarageRating.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/store/RatingStore.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Item.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Item.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/http/itemAPI.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/http/itemAPI.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/http/userAPI.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/http/userAPI.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/Admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/store/ItemStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/ItemStore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/itemController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/itemController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/typeController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/typeController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/typeRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/typeRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/ItemPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/ItemPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/AccountPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/AccountPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/ratingController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/ratingController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/userController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/ratingRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/ratingRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/userRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/userRouter.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +169,11 @@
       <workItem from="1683644188926" duration="546000" />
       <workItem from="1683792994217" duration="16280000" />
       <workItem from="1683882748989" duration="5748000" />
-      <workItem from="1683906231415" duration="5765000" />
+      <workItem from="1683906231415" duration="6290000" />
+      <workItem from="1683968681195" duration="1524000" />
+      <workItem from="1683972633342" duration="3309000" />
+      <workItem from="1683985893441" duration="3602000" />
+      <workItem from="1684000052072" duration="4875000" />
     </task>
     <servers />
   </component>

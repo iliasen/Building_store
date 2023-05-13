@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import Container from 'react-bootstrap/Container'
 import { Image } from 'react-bootstrap'
 import { NavLink, useParams } from 'react-router-dom'
 import { PAYMENT_ROUTE } from '../utils/consts'
-import { fetchOneItem } from '../http/itemAPI'
+import {createRating, fetchOneItem, fetchRating} from '../http/itemAPI'
+
 
 import Rating from '../components/modals/Rating'
 import '../styles/ItemPage.css'
@@ -13,13 +14,34 @@ import yes from '../res/ItemPage/yes.png'
 import location from '../res/ItemPage/location.png'
 import wallet from '../res/ItemPage/wallet.png'
 import about from '../res/ItemPage/about.png'
+import {fetchUserName} from "../http/userAPI";
+import AvarageRating from "../components/modals/AvarageRating";
+
 
 const ItemPage = () => {
   const [item, setItem] = useState({ info: [] })
   const { id } = useParams()
+  const [rating, setRating] = useState([])
+
   useEffect(() => {
     fetchOneItem(id).then((data) => setItem(data))
   }, [])
+
+  const CreateRating = (rate, feedback) =>{
+    createRating(id , rate, feedback).then((rate) => {})
+  }
+
+  useEffect(() => {
+    fetchRating(id).then((rate) => setRating(rate))
+  }, [])
+
+
+  const [userEmails, setUserEmails] = useState({});
+
+  useEffect(() => {
+    rating.forEach(info =>
+      { fetchUserName(info.userId).then(user =>
+        { setUserEmails(prev => ({...prev, [info.userId]: user.email})); }); }); }, [rating]);
 
   const shops = [
     { id: 1, location: 'Сурганова д.5', flag: true },
@@ -65,7 +87,7 @@ const ItemPage = () => {
               </div>
               <div>
                 <div className="d-flex">
-                  <div className="mark_rate">{item.rating}</div>
+                  <div className="mark_rate">{item.rating} <AvarageRating itemId={item.id} /></div>
                   <div className="rate"></div>
                   <div id="after_feedback"></div>
                   <div
@@ -152,6 +174,7 @@ const ItemPage = () => {
                         type="button"
                         value="Отправить"
                         onClick={() => {
+                          let rating = ''
                           const textarea =
                             document.getElementsByName('feedback')[0]
                           if (textarea.value) {
@@ -161,6 +184,7 @@ const ItemPage = () => {
                             const rate = document.getElementsByName('rating')
                             for (let i of rate) {
                               if (i.checked) {
+                                rating = i.value
                                 console.log(i.value)
                               }
                             }
@@ -170,8 +194,8 @@ const ItemPage = () => {
                             const after =
                               document.getElementById('after_feedback')
                             after.textContent = 'Спасибо за отзыв !'
-
                             console.log(textarea.value)
+                            CreateRating(rating, textarea.value)
                           }
                         }}
                       ></input>
@@ -220,14 +244,16 @@ const ItemPage = () => {
                   </div>
                 ))}
               </div>
+
+
               <div id="feedback" style={{ display: 'none' }}>
-                {feedbacks.map((info) => (
+                {rating.map((info) => (
                   <div key={info.id} className="feedback_about_item">
-                    <span className="info_title">{info.user} :</span>
+                    <span className="info_title">{userEmails[info.userId]} :</span>
                     <div>
-                      <Rating rating={info.user_rate} />
+                      <Rating rating={info.rate} />
                     </div>
-                    {info.user_feedback}
+                    {info.feedback}
                   </div>
                 ))}{' '}
               </div>

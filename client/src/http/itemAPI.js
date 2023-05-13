@@ -71,3 +71,18 @@ export const deleteOneItem = async (id) => {
   const { data } = await $authHost.delete('api/item/' + id)
   return data
 }
+
+export const createRating = async (itemId, rate, feedback) => {
+  const {data} = await $authHost.post('api/rating/' + itemId, {rate, feedback})
+  return data
+}
+
+export const fetchRating = async (itemId) => {
+  const {data} = await $host.get('api/rating/' + itemId)
+  return data
+}
+
+export const getAverageRating = async (itemId) => {
+  const {data} = await $host.get('api/rating/average/' + itemId)
+  return {data}
+}

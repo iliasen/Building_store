@@ -69,6 +69,16 @@ class UserController{
         await User.destroy({where:{id}})
         res.json({message: 'Пользователь успешно удалён'})
     }
+
+    async getOne(req, res, next){
+        const {id} = req.params
+        if(!id){
+            return next(ApiError.internal('Ошибка. Необходимо указать id пользователя'))
+        }
+        const data = await User.findOne({where: {id}})
+        console.log(data)
+        res.json(data)
+    }
 }
 
 module.exports = new UserController()

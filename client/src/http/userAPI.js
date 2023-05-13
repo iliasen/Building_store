@@ -35,3 +35,9 @@ export const change = async (email,oldPassword, newPassword) => {
   localStorage.setItem('token', data.token)
   return jwt_decode(data.token)
 }
+
+export const fetchUserName = async (id) => {
+  console.log(id)
+  const { data } = await $host.get('api/user/'+ id);
+  return data
+}

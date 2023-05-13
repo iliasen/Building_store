@@ -4,7 +4,9 @@
     background-size: cover;
     width: calc(100vw - 18px);
     height: calc(100vh - 25px);
-    padding:100px 550px;
+    padding:100px;
+    display: flex;
+    justify-content: center;
 }
 
 .Account *{
@@ -12,6 +14,8 @@
 }
 
 .User_data{
+    width: max-content;
+    height: max-content;
     -webkit-font-smoothing: antialiased;
     font-family: YS Text,Arial,sans-serif;
     font-size: 14px;
