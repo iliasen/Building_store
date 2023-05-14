@@ -11,7 +11,10 @@ const User = sequelize.define('user', {
 const Basket = sequelize.define('basket', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
 })
-
+const BasketItem = sequelize.define('basket_item', {
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    quantity: { type: DataTypes.INTEGER, defaultValue: 1 }
+})
 const Item = sequelize.define('item', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     name: {type: DataTypes.STRING, unique: true, allowNull: false},
@@ -55,15 +58,14 @@ Basket.belongsTo(User)
 User.hasMany(Rating)
 Rating.belongsTo(User)
 
-Basket.belongsToMany(Item, { through: 'basket_item' })
-Item.belongsToMany(Basket, { through: 'basket_item' })
+Basket.hasMany(BasketItem)
+BasketItem.belongsTo(Basket)
 
-sequelize.models.basket_item.belongsTo(Item)
-sequelize.models.basket_item.belongsTo(Basket)
+Item.hasMany(BasketItem)
+BasketItem.belongsTo(Item)
 
-sequelize.models.basket_item.addHook('beforeSave', async (basket_item) => {
-    basket_item.quantity = basket_item.quantity || 1;
-});
+Basket.belongsToMany(Item, { through: BasketItem })
+Item.belongsToMany(Basket, { through: BasketItem })
 
 Type.hasMany(Item)
 Item.belongsTo(Type)
@@ -83,6 +85,7 @@ Brand.belongsToMany(Type, {through: TypeBrand })
 module.exports = {
     User,
     Basket,
+    BasketItem,
     Item,
     Type,
     Brand,

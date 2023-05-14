@@ -14,7 +14,7 @@
 }
 
 .User_data{
-    width: max-content;
+    width: 350px;
     height: max-content;
     -webkit-font-smoothing: antialiased;
     font-family: YS Text,Arial,sans-serif;
@@ -25,7 +25,7 @@
     color: rgba(247,247,255,.9);
     background-color: hsla(0,0%,100%,.4);
     border-radius: 16px;
-    padding: 32px;
+    padding: 16px;
     box-sizing: border-box;
     overflow: hidden;
 }
@@ -41,12 +41,16 @@
 }
 
 .User_info{
-     display: flex;
-    flex-direction: column;
+    width: 100%;
     color: #373435;
     margin-bottom: 10px;
 }
-
+.title-characteristics_acc{
+    margin-right: 15px;
+    width: 75px;
+    font-size: 18px;
+    display: inline-block;
+}
 .interactions_with_acc{
     display: flex;
     justify-content: space-between;

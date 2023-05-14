@@ -5,6 +5,7 @@ import '../styles/Item.css'
 import { useNavigate } from 'react-router-dom'
 import { ITEM_ROUTE } from '../utils/consts'
 import {fetchOneType} from "../http/itemAPI";
+import AverageRating from "./modals/AverageRating";
 
 const Item = ({ item }) => {
   const navigate = useNavigate()
@@ -28,7 +29,7 @@ const Item = ({ item }) => {
         <div className="description">
           <header className="type">{type_name}</header>
           <div className="rate_container">
-            <div>{item.rating}</div>
+            <AverageRating itemId={item.id} />
             <Image className="star_img" src={rate} />
           </div>
         </div>

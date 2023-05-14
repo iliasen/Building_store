@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import Container from 'react-bootstrap/Container'
 import { Image } from 'react-bootstrap'
 import { NavLink, useParams } from 'react-router-dom'
@@ -15,14 +15,13 @@ import location from '../res/ItemPage/location.png'
 import wallet from '../res/ItemPage/wallet.png'
 import about from '../res/ItemPage/about.png'
 import {fetchUserName} from "../http/userAPI";
-import AvarageRating from "../components/modals/AvarageRating";
+import AverageRating from "../components/modals/AverageRating";
 
 
 const ItemPage = () => {
   const [item, setItem] = useState({ info: [] })
   const { id } = useParams()
   const [rating, setRating] = useState([])
-
   useEffect(() => {
     fetchOneItem(id).then((data) => setItem(data))
   }, [])
@@ -34,7 +33,6 @@ const ItemPage = () => {
   useEffect(() => {
     fetchRating(id).then((rate) => setRating(rate))
   }, [])
-
 
   const [userEmails, setUserEmails] = useState({});
 
@@ -49,28 +47,7 @@ const ItemPage = () => {
     { id: 3, location: 'Кринково д. 117', flag: true },
     { id: 4, location: 'Маркса д. 24', flag: false },
   ]
-
-  const feedbacks = [
-    {
-      id: 1,
-      user: 'Николай@gmail.com',
-      user_feedback: 'Товар полное дерьмо (((',
-      user_rate: 1,
-    },
-    {
-      id: 2,
-      user: 'Иван@gmail.com',
-      user_feedback: 'Неплохой прибор',
-      user_rate: 3,
-    },
-    {
-      id: 3,
-      user: 'Aлексей@gmail.com',
-      user_feedback: 'Very good',
-      user_rate: 5,
-    },
-  ]
-
+  
   return (
     <Container>
       <div className="item-page-main-container">
@@ -87,7 +64,7 @@ const ItemPage = () => {
               </div>
               <div>
                 <div className="d-flex">
-                  <div className="mark_rate">{item.rating} <AvarageRating itemId={item.id} /></div>
+                  <div className="mark_rate"> <AverageRating itemId={id} /> </div>
                   <div className="rate"></div>
                   <div id="after_feedback"></div>
                   <div
@@ -247,7 +224,8 @@ const ItemPage = () => {
 
 
               <div id="feedback" style={{ display: 'none' }}>
-                {rating.map((info) => (
+                {rating.length === 0 ? (<div className="no-feedback d-flex justify-content-center">Отзывов на данный товар пока нет 😒</div>):(
+                  rating.map((info) => (
                   <div key={info.id} className="feedback_about_item">
                     <span className="info_title">{userEmails[info.userId]} :</span>
                     <div>
@@ -255,7 +233,8 @@ const ItemPage = () => {
                     </div>
                     {info.feedback}
                   </div>
-                ))}{' '}
+                )))
+                }
               </div>
             </div>
           </div>

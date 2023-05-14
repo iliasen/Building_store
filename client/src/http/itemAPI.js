@@ -84,5 +84,5 @@ export const fetchRating = async (itemId) => {
 
 export const getAverageRating = async (itemId) => {
   const {data} = await $host.get('api/rating/average/' + itemId)
-  return {data}
+  return data
 }

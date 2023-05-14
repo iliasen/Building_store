@@ -1,0 +1,86 @@
+.basket-container{
+    height: 100vh;
+    padding: 50px;
+
+}
+.location-image{
+    background-image: url('../res/Basket/location.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 5px;
+    margin-right: 5px;
+    width: 30px;
+    height: 30px;
+}
+.basket-title{
+    font-family: 'Open Sans Condensed',franklingothicdemicondcRg,Arial,Helvetica Neue,Helvetica,sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0 0 20px;
+    color: #000;
+    word-break: break-word;
+    white-space: normal;
+}
+.cart-form__description{
+    color: #999;
+    font-size: 13px;
+    line-height: 1.231;
+    font-family: 'Open Sans',Arial,Helvetica Neue,Helvetica,sans-serif;
+}
+
+.basket-content{
+    width: 100%;
+    height: max-content;
+    margin-top: 32px;
+    padding: 20px;
+    border-radius: 7px;
+    border: 1px solid #e2e2e2;
+}
+
+.making_an_order{
+    margin-top: 16px;
+    border-top: 1px solid #e2e2e2;
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+.time{
+    font-weight: 600;
+    font-size: 14px;
+
+    font-family: 'Open Sans',Arial,Helvetica Neue,Helvetica,sans-serif;
+    -webkit-text-size-adjust: 100%;
+}
+.disclaimer{
+    color: #999;
+    font-size: 14px;
+    line-height: 1.429;
+    font-family: 'Open Sans',Arial,Helvetica Neue,Helvetica;
+    -webkit-text-size-adjust: 100%;
+}
+.making_an_order ul {
+    list-style: none; /* Удалить маркеры по умолчанию */
+}
+
+.making_an_order ul li::before {
+    content: "\2022"; /* Добавляем content: \2022, он же символ точки (маркера) */
+    display: inline-block;
+    width: 1em;
+    color: #e2e2e2; /* меняем цвет */
+    font-weight: bold;
+    margin-left: -1em;
+}
+.making_an_order button{
+    background-color: #f7765c;
+    font-family: 'Open Sans',Arial,Helvetica Neue,Helvetica,sans-serif;
+    border: 0px;
+    height: 32px;
+    line-height: 1;
+    box-sizing: border-box;
+    padding: 9px 17px;
+    border-radius: 3px;
+    color: rgb(255, 255, 255);
+}
+.making_an_order button:hover{
+    background-color: #f26a53;
+}

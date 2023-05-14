@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import {getAverageRating} from "../../http/itemAPI";
 
-const AvarageRating = ({ itemId }) => {
+const AverageRating = ({ itemId }) => {
     const [average, setAverage] = useState(0);
-
+    console.log(itemId)
     useEffect(() => {
         getAverageRating(itemId).then((avg) => {
+            console.log(avg)
             setAverage(avg);
         });
     }, [itemId]);
@@ -15,4 +16,4 @@ const AvarageRating = ({ itemId }) => {
         </div>
     );
 };
-export default AvarageRating;
+export default AverageRating;

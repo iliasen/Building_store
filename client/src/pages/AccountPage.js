@@ -28,9 +28,15 @@ const AccountPage = () => {
       <div className="User_data">
         <div className='Logo_account'></div>
         <div className='User_info'>
-          <div>email:ㅤ{user.user.email}</div>
-          <div>id:ㅤ{user.user.id}</div>
-          <div>role:ㅤ{user.user.role}</div>
+          <div>
+            <span className='title-characteristics_acc'>email:</span>{user.user.email}
+          </div>
+          <div>
+            <span className='title-characteristics_acc'>id:</span>{user.user.id}
+          </div>
+          <div>
+            <span className='title-characteristics_acc'>role:</span>{user.user.role}
+          </div>
         </div>
         <div className='interactions_with_acc'>
           <div className='switch_account_button' onClick={() => setChangeVisible(true)}>Изменить пароль</div>

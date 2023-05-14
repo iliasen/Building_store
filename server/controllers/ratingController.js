@@ -40,6 +40,9 @@ class RatingController {
 
     async getAverage(req,res,next){
         const {itemId} = req.params // id товара из URL
+        if (!itemId) {
+            return next(ApiError.internal("Ошибка. Не задан id товара"))
+        }
         const ratings = await Rating.findAll({where: {itemId}}) // находим все рейтинги по этому id
         if (!ratings || ratings.length === 0) {
             return next(ApiError.internal("Ошибка. Рейтинги по этому товару не найдены"))
@@ -49,7 +52,7 @@ class RatingController {
             sum += r.rate //суммируем все рейтинги
         })
         let average = sum / ratings.length // среднее арифметическое
-        res.json({average: average}) // ответ с сервера с общим рейтингом
+        res.json(average)
     }
 }
 module.exports = new RatingController()
