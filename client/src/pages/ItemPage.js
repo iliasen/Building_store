@@ -1,6 +1,8 @@
-import React, {useEffect, useState} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import Container from 'react-bootstrap/Container'
-import { Image } from 'react-bootstrap'
+import {Image, Tooltip} from 'react-bootstrap'
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Popover from 'react-bootstrap/Popover';
 import { NavLink, useParams } from 'react-router-dom'
 import { PAYMENT_ROUTE } from '../utils/consts'
 import {createRating, fetchOneItem, fetchRating} from '../http/itemAPI'
@@ -16,9 +18,13 @@ import wallet from '../res/ItemPage/wallet.png'
 import about from '../res/ItemPage/about.png'
 import {fetchUserName} from "../http/userAPI";
 import AverageRating from "../components/modals/AverageRating";
+import {addItem} from "../http/basketAPI";
+import {Context} from "../index";
 
 
 const ItemPage = () => {
+
+  const {user} = useContext(Context)
   const [item, setItem] = useState({ info: [] })
   const { id } = useParams()
   const [rating, setRating] = useState([])
@@ -47,7 +53,40 @@ const ItemPage = () => {
     { id: 3, location: 'Кринково д. 117', flag: true },
     { id: 4, location: 'Маркса д. 24', flag: false },
   ]
-  
+
+  //бококвое окно
+  const [showTooltip, setShowTooltip] = useState(false);
+  const [showAuthTooltip, setShowAuthTooltip] = useState(false);
+  const renderTooltip = (props) => (
+        <Tooltip id="button-tooltip" {...props}>
+          товар добавлен
+        </Tooltip>
+    );
+  const renderAuthTooltip = (props) => (
+      <Tooltip id="auth-tooltip" {...props}>
+        пожалуйста, авторизуйтесь
+      </Tooltip>
+  );
+
+  const handleClick = () => {
+    if (user.Auth) {
+      // если пользователь авторизован
+      setShowTooltip(true);
+      setTimeout(() => {
+        setShowTooltip(false);
+      }, 3000); // скрываем тултип через 3 секунды
+      const quantity = document.getElementsByName("quantity")[0];
+      console.log(quantity.value);
+      addItem(user.user.id, item.id, { quantity: quantity.value }).then();
+    } else {
+      // если пользователь не авторизован
+      setShowAuthTooltip(true);
+      setTimeout(() => {
+        setShowAuthTooltip(false);
+      }, 3000);
+    }
+  };
+
   return (
     <Container>
       <div className="item-page-main-container">
@@ -262,6 +301,9 @@ const ItemPage = () => {
           </div>
         </div>
 
+
+
+
         <div className="right-side">
           <div className="price-methods">
             <div className="d-flex">
@@ -287,15 +329,20 @@ const ItemPage = () => {
                 pattern="[1-9]*"
                 className="form-control"
               />
-              <input
-                type="button"
-                value="Добавить в корзину"
-                className="button-image"
-                onClick={() => {
-                  const quantity = document.getElementsByName('quantity')[0]
-                  console.log(quantity.value)
-                }}
-              />
+              <OverlayTrigger
+                  trigger="manual"
+                  placement="right"
+                  overlay={user.Auth ? renderTooltip : renderAuthTooltip} // выбираем нужный тултип в зависимости от user.auth
+                  show={user.Auth ? showTooltip : showAuthTooltip} // выбираем нужное состояние в зависимости от user.auth
+                  rootClose={true}
+              >
+                <input
+                    type="button"
+                    value="Добавить в корзину"
+                    className="button-image"
+                    onClick={handleClick}
+                />
+              </OverlayTrigger>
             </form>
 
             <div className="delivery">

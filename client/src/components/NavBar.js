@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, {useContext, useEffect} from 'react'
 import { Context } from '../index'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
@@ -17,9 +17,17 @@ import '../styles/NavBar.css'
 import { observer } from 'mobx-react-lite'
 import { Image } from 'react-bootstrap'
 import logo from '../res/лого_тем.png'
+import {getItems} from "../http/basketAPI";
 
 const NavBar = observer(() => {
   const { user } = useContext(Context)
+  const { basket } = useContext(Context)
+
+  useEffect(()=> {
+    getItems(user.user.id).then((items) => basket.setBasket_items(items))
+  }, [basket.basket_items])
+
+
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
@@ -36,7 +44,7 @@ const NavBar = observer(() => {
           {user.Auth ? (
             <Nav className="href-container">
               <NavLink className="href" to={BASKET_ROUTE}>
-                Корзина
+                Корзина {basket.basket_items.length !== 0 ? <div className='quantity-in-basket'><div>{basket.basket_items.length}</div></div> : null}
               </NavLink>
               <NavLink className="href d-flex" to={ACCOUNT_ROUTE}>
 

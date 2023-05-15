@@ -5,32 +5,48 @@ class BasketController{
 
         async addItem(req, res, next) {
         try {
-            const { basketId, itemId} = req.params
-            const {quantity } = req.body
+            const { userId, itemId} = req.params
+            const {quantity} = req.body
 
             // Найти или создать корзину с заданным идентификатором
             const [basket, created] = await Basket.findOrCreate({
-                where: { id: basketId }
+                where: { id: userId }
             })
+            if (!basket) {
+                return next(ApiError.internal("Ошибка. не задан id пользователя"))
+            }
             const item = await Item.findByPk(itemId)
 
             if (!item) {
                 return next(ApiError.internal("Ошибка. Заданный товар не найден"))
             }
 
-            await basket.addItem(item, { through: { quantity } })
-            return res.json({massage: "товар добавлен к корзину"})
-        } catch (error) {
-            return next(ApiError.forbidden(error.massage))
-        }
-    }
+            // Найти запись в таблице связей между корзиной и товаром
+            const basketItem = await BasketItem.findOne({
+                where: { basketId: basket.id, itemId: item.id }
+            })
 
+            // Если запись существует, увеличить количество товара на заданное значение
+            if (basketItem) {
+                basketItem.quantity += Number(quantity)
+                await basketItem.save()
+            } else {
+                // Иначе создать новую запись с заданным количеством
+                await basket.addItem(item, { through: { quantity } })
+            }
+
+            return res.json({massage: "товар добавлен к корзину"})
+        } catch (e) {
+            next(ApiError.badRequest(e.message))
+        }
+        }
+aaa
     async getItems(req, res, next) {
         try {
-            const { basketId } = req.params
+            const { userId } = req.params
 
-            const basket = await Basket.findOne({where: { id: basketId },
-                include: [{ model: BasketItem, as: 'basket_items', include: [{ model: Item, as: 'item' }] }]
+            const basket = await Basket.findOne({where: { id: userId },
+                include: [{ model: BasketItem, as: 'basket_items', include: [{ model: Item, as: 'item' }] }],order: [['basket_items', 'id', 'ASC']]
             })
 
             if (!basket) {
@@ -49,37 +65,37 @@ class BasketController{
             }));
 
             return res.json({ basket_items: itemsWithQuantity })
-        }catch (error) {
-            return next(ApiError.forbidden(error.massage))
+        }catch (e) {
+            next(ApiError.badRequest(e.message))
         }
     }
 
 
     async removeItem(req, res,next) {
         try {
-            const { basketId, itemId } = req.params
+            const { userId, itemId } = req.params
             const basketItem = await BasketItem.findOne({
-                where: { basketId: basketId, itemId: itemId }
+                where: { basketId: userId, itemId: itemId }
             })
 
             if (!basketItem) {
-                return next(ApiError.internal("Ошибка. Корзина с заданным id не найдена"))
+                return next(ApiError.internal("Ошибка. Корзина с заданными параметрами не найдена"))
             }
             await basketItem.destroy()
             return res.json({ message: 'Тавар удалён' })
         }
-        catch (error) {
-            return next(ApiError.forbidden(error.massage))
+        catch (e) {
+            next(ApiError.badRequest(e.message))
         }
     }
 
     async updateItem(req, res, next) {
         try {
-            const { basketId, itemId } = req.params
+            const { userId, itemId } = req.params
             const { quantity } = req.body
 
             const basketItem = await BasketItem.findOne({
-                where: { basketId: basketId, itemId: itemId }
+                where: { basketId: userId, itemId: itemId }
             })
 
             if (!basketItem) {

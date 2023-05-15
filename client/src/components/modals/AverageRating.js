@@ -3,10 +3,9 @@ import {getAverageRating} from "../../http/itemAPI";
 
 const AverageRating = ({ itemId }) => {
     const [average, setAverage] = useState(0);
-    console.log(itemId)
     useEffect(() => {
         getAverageRating(itemId).then((avg) => {
-            console.log(avg)
+            // console.log(avg)
             setAverage(avg);
         });
     }, [itemId]);

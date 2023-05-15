@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 import UserStore from './store/UserStore'
 import ItemStore from './store/ItemStore'
-import Rating from "./components/modals/Rating";
 import RatingStore from "./store/RatingStore";
+import BasketStore from "./store/BasketStore";
 
 export const Context = createContext(null)
 
@@ -17,6 +17,7 @@ root.render(
       user: new UserStore(),
       item: new ItemStore(),
       rating: new RatingStore(),
+      basket: new BasketStore(),
     }}
   >
     <App />

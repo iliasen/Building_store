@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Form, Image} from "react-bootstrap";
 import '../styles/BasketItem.css'
 import {fetchOneType} from "../http/itemAPI";
@@ -7,8 +7,13 @@ import rate from "../res/star.png";
 import {useNavigate} from "react-router-dom";
 import {ITEM_ROUTE} from "../utils/consts";
 import bind from '../res/Basket/bind.png'
+import {removeItem, updateQuantity} from "../http/basketAPI";
+import {Context} from "../index";
+import {observer} from "mobx-react-lite";
 
-const BasketItem = ({ item }) => {
+const BasketItem =observer(  ({ item }) => {
+    const {user} = useContext(Context)
+
     const navigate = useNavigate()
     const [type_name, setType_name] = React.useState(null);
 
@@ -45,11 +50,11 @@ const BasketItem = ({ item }) => {
 
                 <div className='item-quantity-price'>
                     <div className='bind-container'>
-                        <div className='bind' onClick={()=>{console.log('lox')}}/>
+                        <div className='bind' onClick={()=> removeItem(user.user.id, item.id)}/>
                     </div>
 
                     <Form>
-                        <Form.Control type='number' style={{textAlign:"center", width: 125}} defaultValue={item.quantity}></Form.Control>
+                        <Form.Control type='number' style={{textAlign:"center", width: 125}} defaultValue={item.quantity} onChange={(e) =>  updateQuantity(user.user.id, item.id, e.target.value)} min='1' max='10'/>
                         <div> {item.quantity !== 1 ? <div className='price-for-one-item'>{item.price}.00 р./шт.</div> : null}</div>
                     </Form>
 
@@ -61,6 +66,6 @@ const BasketItem = ({ item }) => {
             </div>
         </div>
     );
-};
+});
 
 export default BasketItem;

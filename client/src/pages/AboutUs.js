@@ -1,10 +1,4 @@
-import React, { useEffect, useState } from 'react'
-
-import { Image } from 'react-bootstrap'
-
-import b1 from '../res/AboutUsPage/build_1.jpg'
-import b2 from '../res/AboutUsPage/build_2.webp'
-import b3 from '../res/AboutUsPage/build_3.webp'
+import React from 'react'
 import '../styles/AboutUs.css'
 
 import Slideshow from '../components/modals/Slide'
