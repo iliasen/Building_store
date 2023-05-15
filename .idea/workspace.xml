@@ -5,22 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da2e4766-0cc2-4c75-bcee-bee778690602" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/modals/AverageRating.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/styles/Basket.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/BasketItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/styles/BasketItem.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Item.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Item.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/modals/AvarageRating.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/http/itemAPI.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/http/itemAPI.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/AccountPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/AccountPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/Basket.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Basket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/ItemPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/ItemPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/AccountPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/AccountPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/ItemPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/ItemPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/TypeBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/TypeBar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/Basket.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Basket.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/controllers/basketController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/basketController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/ratingController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/ratingController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/models.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/models.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/basketRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/basketRouter.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,6 +170,7 @@
       <workItem from="1684051814528" duration="4478000" />
       <workItem from="1684059614907" duration="4042000" />
       <workItem from="1684065502893" duration="12107000" />
+      <workItem from="1684130685771" duration="14200000" />
     </task>
     <servers />
   </component>

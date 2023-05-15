@@ -3,36 +3,7 @@ const {ApiError}= require('../error/ApiError')
 
 class BasketController{
 
-    // async addItem(req, res, next) {
-    //     try {
-    //         const { basketId, itemId } = req.params;
-    //         const { quantity } = req.body;
-    //         const basket = await Basket.findOne({ where: { id: basketId } });
-    //         if (!basket) {
-    //             return next(ApiError.badRequest('Корзина не найдена'));
-    //         }
-    //         const item = await Item.findOne({ where: { id: itemId } });
-    //         if (!item) {
-    //             return next(ApiError.badRequest('Указанный товар не найдена'));
-    //         }
-    //         await basket.addItem(item, { through: { quantity } });
-    //         return res.json({ message: 'Товар добавлен в карзину' });
-    //     } catch (error) {
-    //         return next(error);
-    //     }
-    // }
-    //
-    // async getItems(req, res, next) {
-    //     const {id} = req.params;
-    //     const basket = await Basket.findOne({ where: {id}});
-    //     if (!basket) {
-    //         return next(ApiError.badRequest('Корзина не найдена'));
-    //     }
-    //     const items = await basket.getItems();//выводим список товаров
-    //     return res.json({ items });
-    // }
-
-    async addItem(req, res){
+        async addItem(req, res, next) {
         try {
             const { basketId, itemId} = req.params
             const {quantity } = req.body
@@ -44,17 +15,17 @@ class BasketController{
             const item = await Item.findByPk(itemId)
 
             if (!item) {
-                return res.status(404).json({ error: 'Item not found' })
+                return next(ApiError.internal("Ошибка. Заданный товар не найден"))
             }
 
             await basket.addItem(item, { through: { quantity } })
-            return res.status(200).json({ message: 'Item added to basket' })
+            return res.json({massage: "товар добавлен к корзину"})
         } catch (error) {
-            return res.status(500).json({ error: error.message })
+            return next(ApiError.forbidden(error.massage))
         }
     }
 
-    async getItems(req, res) {
+    async getItems(req, res, next) {
         try {
             const { basketId } = req.params
 
@@ -63,7 +34,7 @@ class BasketController{
             })
 
             if (!basket) {
-                return res.status(404).json({ error: 'Basket not found' })
+                return next(ApiError.internal("Ошибка. Корзина с заданным id не найдена"))
             }
 
             const itemsWithQuantity = basket.basket_items.map(item => ({
@@ -72,16 +43,19 @@ class BasketController{
                 price: item.item.price,
                 quantity: item.quantity,
                 img: item.item.img,
+                about: item.item.about,
+                typeId: item.item.typeId,
+                brandId: item.item.brandId
             }));
 
-            return res.status(200).json({ basket_items: itemsWithQuantity })
+            return res.json({ basket_items: itemsWithQuantity })
         }catch (error) {
-            return res.status(500).json({ error: error.message })
+            return next(ApiError.forbidden(error.massage))
         }
     }
 
 
-    async removeItem(req, res) {
+    async removeItem(req, res,next) {
         try {
             const { basketId, itemId } = req.params
             const basketItem = await BasketItem.findOne({
@@ -89,17 +63,17 @@ class BasketController{
             })
 
             if (!basketItem) {
-                return res.status(404).json({ error: 'Basket item not found' })
+                return next(ApiError.internal("Ошибка. Корзина с заданным id не найдена"))
             }
             await basketItem.destroy()
-            return res.status(200).json({ message: 'Basket item removed successfully' })
+            return res.json({ message: 'Тавар удалён' })
         }
         catch (error) {
-            return res.status(500).json({ error: error.message })
+            return next(ApiError.forbidden(error.massage))
         }
     }
 
-    async updateItem(req, res) {
+    async updateItem(req, res, next) {
         try {
             const { basketId, itemId } = req.params
             const { quantity } = req.body
@@ -109,14 +83,14 @@ class BasketController{
             })
 
             if (!basketItem) {
-                return res.status(404).json({ error: 'Basket item not found' })
+                return next(ApiError.internal("Ошибка. Корзина с заданным id не найдена"))
             }
 
             await basketItem.update({ quantity: quantity })
 
-            return res.status(200).json({ message: 'Basket item updated successfully' })
+            return res.json({ message: 'Изменено количество товара' })
         } catch (error) {
-            return res.status(500).json({ error: error.message })
+            return next(ApiError.forbidden(error.massage))
         }
     }
 }
