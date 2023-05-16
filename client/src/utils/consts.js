@@ -12,3 +12,5 @@ export const PAYMENT_ROUTE = '/payment'
 export const GUARANTEES_ROUTE = '/guarantees'
 
 export const ACCOUNT_ROUTE = '/account'
+
+export const ORDER_ROUTE = '/order'

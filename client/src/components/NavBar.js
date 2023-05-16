@@ -44,7 +44,7 @@ const NavBar = observer(() => {
           {user.Auth ? (
             <Nav className="href-container">
               <NavLink className="href" to={BASKET_ROUTE}>
-                Корзина {basket.basket_items.length !== 0 ? <div className='quantity-in-basket'><div>{basket.basket_items.length}</div></div> : null}
+                Корзина {basket.basket_items.length !== 0 ? <div className='quantity-in-basket'>{basket.basket_items.length}</div> : null}
               </NavLink>
               <NavLink className="href d-flex" to={ACCOUNT_ROUTE}>
 

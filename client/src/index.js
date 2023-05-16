@@ -5,6 +5,7 @@ import UserStore from './store/UserStore'
 import ItemStore from './store/ItemStore'
 import RatingStore from "./store/RatingStore";
 import BasketStore from "./store/BasketStore";
+import LocationStore from "./store/LocationStore";
 
 export const Context = createContext(null)
 
@@ -18,6 +19,7 @@ root.render(
       item: new ItemStore(),
       rating: new RatingStore(),
       basket: new BasketStore(),
+      location: new LocationStore(),
     }}
   >
     <App />

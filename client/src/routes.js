@@ -9,7 +9,7 @@ import {
   REGISTRATION_ROUTE,
   GUARANTEES_ROUTE,
   SHOP_ROUTE,
-  ACCOUNT_ROUTE,
+  ACCOUNT_ROUTE, ORDER_ROUTE,
 } from './utils/consts'
 
 import Basket from './pages/Basket'
@@ -20,6 +20,7 @@ import AboutUs from './pages/AboutUs'
 import Payment from './pages/Payment'
 import Guarantees from './pages/Guarantees'
 import Account from './pages/AccountPage'
+import Order from "./pages/Order";
 
 export const authRoutes = [
   {
@@ -33,6 +34,10 @@ export const authRoutes = [
   {
     path: ACCOUNT_ROUTE,
     Component: Account,
+  },
+  {
+    path: ORDER_ROUTE,
+    Component: Order,
   },
 ]
 

@@ -1,20 +1,24 @@
-import React, {useContext, useEffect} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import Container from "react-bootstrap/Container";
-import '../styles/Basket.css'
 import BasketItem from "../components/BasketItem";
 import {observer} from "mobx-react-lite";
 import {Context} from "../index";
 import {Image} from "react-bootstrap";
-import {SHOP_ROUTE} from "../utils/consts";
+import {ORDER_ROUTE, SHOP_ROUTE} from "../utils/consts";
 import {useNavigate} from "react-router-dom";
-import emptyBasket from "../res/Basket/empty_basket.png"
 import {getItems} from "../http/basketAPI";
+import ChangeLocation from "../components/modals/ChangeLocation";
 
+import '../styles/Basket.css'
+import emptyBasket from "../res/Basket/empty_basket.png"
 
 const Basket = observer(() => {
 
   const {user} = useContext(Context)
+  const {location} = useContext(Context)
   const navigate = useNavigate()
+  const [Visible, setVisible] = useState(false)
+
   const { basket } = useContext(Context)
 
   useEffect(()=> {
@@ -22,10 +26,29 @@ const Basket = observer(() => {
   }, [basket.basket_items])
 
 
-  const total = basket.basket_items.reduce((sum, item) => sum + item.price * item.quantity, 0)
-  const total_quantity = basket.basket_items.reduce((sum, item) => sum + item.quantity, 0)
-  let finalprice = total > 650 ? total * 0.95 : total
-  let totalWithDelivery = total < 500 ? finalprice + 30 : finalprice;
+  const total = basket.basket_items.reduce(
+      (sum, item) => sum + item.price * item.quantity,
+      0
+  );
+  const total_quantity = basket.basket_items.reduce(
+      (sum, item) => sum + item.quantity,
+      0
+  );
+
+  let delivery = 50;
+  if (location.location !== 'Минск' && location.location !== 'минск') {
+    delivery += 50; }
+    // Проверка total
+    if (total > 1000) {
+        delivery = 0;
+    } else if (total > 500 && (location.location === 'Минск' || location.location === 'минск')) {
+      delivery = 0; }
+      delivery = delivery === 0 ? 'бесплатно' : delivery;
+
+  let finalPrice = total > 650 ? total * 0.95 : total
+  function goToCheckout() {
+     navigate(ORDER_ROUTE,{state: {total, delivery}});
+  }
 
   return <Container className='basket-container'>
     <div className='basket-head'>
@@ -36,7 +59,8 @@ const Basket = observer(() => {
         <div className='location-image'/>
         <div>
           <div>
-            Ваш населенный пункт: <a className='cart-form__link_base-alter'>Минск</a>
+            Ваш населенный пункт: <a className='cart-form__link_base-alter' style={{cursor: "pointer"}} onClick={() => setVisible(true)}>{location.location}</a>
+            <ChangeLocation show={Visible} onHide={() => setVisible(false)} />
           </div>
           <div className="cart-form__description">
             Наличие доставки и ее стоимость зависят от выбранного населенного пункта
@@ -60,9 +84,9 @@ const Basket = observer(() => {
 
         <div className='making_an_order'>
           <div>
-            <span className='time'>Через 1 день</span> <span className='disclaimer'> доставка в г. Минск</span>
+            <span className='time'>{location.location !== "Минск" && location.location !== "минск" ? 'Через 3 дня': 'Через 1 день'}</span> <span className='disclaimer'> доставка в г. {location.location}</span>
             <ul>
-              {total >= 500 ? <li>по адресу — <strong >бесплатно</strong></li> : <li>по адресу — <strong >30 р.</strong></li>}
+              <li>по адресу — <strong>{delivery}</strong></li>
               <li>в пункт выдачи — <strong>бесплатно</strong></li>
             </ul>
           </div>
@@ -73,11 +97,11 @@ const Basket = observer(() => {
               {total_quantity === 1 ? 'товар' : total_quantity < 5 ? 'товара' : 'товаров'} на сумму:ㅤ
               {total > 650 ?
                   <div className='d-flex' >
-                    <strong style={{scale: 1.2, fontSize: 15, fontWeight: 600}}>{finalprice},00 р.</strong>
+                    <strong style={{scale: 1.2, fontSize: 15, fontWeight: 600}}>{finalPrice},00 р.</strong>
                     <div style={{fontSize:12, color: '#999'}}>*cкидка 5%</div>
-                  </div> : <strong style={{scale: 1.2, fontSize: 15, fontWeight: 600}}>{finalprice},00 р.</strong>}
+                  </div> : <strong style={{scale: 1.2, fontSize: 15, fontWeight: 600}}>{finalPrice},00 р.</strong>}
             </div>
-            <button>Перейти к оформлению </button>
+            <button onClick={goToCheckout}>Перейти к оформлению </button>
           </div>
         </div>
       </div>
