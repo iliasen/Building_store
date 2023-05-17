@@ -1,0 +1,98 @@
+.orderContainer{
+    margin-top: 64px;
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+    font-family: 'Open Sans',Arial,Helvetica Neue,Helvetica,sans-serif;
+}
+
+
+.deliveryAddress{
+    margin-top: 10px;
+}
+.deliveryAddress > div{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #000;
+}
+
+.addressInputs{
+    display: flex;
+    flex-direction: column;
+    margin-right: 16px;
+    margin-top: 8px;
+}
+.addressInputs:last-child{
+    margin-right: 0;
+}
+
+.deliveryAddress label{
+    margin-left: 5px;
+    font-size: 16px;
+    line-height: 1.429;
+    font-family: 'Open Sans',Arial,Helvetica Neue,Helvetica,sans-serif;
+    font-weight: 525;
+}
+
+.House, .Flat , .Address{
+    width: 50px;
+    border-radius: 5px;
+    border: 0.1em solid #e2e2e2;
+    padding: 4px 10px;
+}
+.Address{
+    width: 350px;
+}
+.Flat{
+    width: 100px;
+}
+
+.order{
+    border: 1px solid #e2e2e2;
+    border-radius: 7px;
+    padding: 16px;
+    height: max-content;
+}
+
+.changeOrder{
+    text-decoration: none;
+}
+.changeOrder:hover{
+    text-decoration-line: underline;
+}
+
+.itemsContainer{
+    margin-bottom: 10px;
+}
+
+.resetLocationButton{
+    width: 30px;
+    height:30px;
+    background-color: #FFF;
+    border: none;
+    color: #999;
+    border-radius: 7px;
+    position: center;
+    padding-bottom: 3px;
+    margin-left: -40px;
+    margin-top: 5px;
+}
+.resetLocationButton:hover{
+    background-color: #e2e2e2;
+    color: black;
+}
+
+.itemsFromBasket{
+    display: flex;
+    justify-content: space-between;
+}
+
+.item-in-order{
+    margin-right: 20px;
+}
+.order .finalPrice{
+    margin-top: 7px;
+    padding-top: 10px;
+    border-top: 1px solid #e2e2e2;
+}

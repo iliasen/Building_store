@@ -13,26 +13,16 @@ export default class LocationStore {
     }
 
     setLocation(location) {
-        this._location = location;
+        const result = location.charAt(0).toUpperCase() + location.slice(1) //заменяем первую букву населённого пункта на большую
+        this._location = result;
         // Сохранение location в локальное хранилище при каждом изменении
-        localStorage.setItem("location", location);
-    }
-
-    setDelivery(delivery) {
-        this._delivery = delivery;
-    }
-
-    updateDelivery(delivery) {
-        this._delivery += delivery;
+        localStorage.setItem("location", result);
     }
 
     get location() {
         return this._location;
     }
 
-    get delivery(){
-        return this._delivery
-    }
 
     removeLocation() {
         localStorage.removeItem("location");

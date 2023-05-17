@@ -22,6 +22,7 @@ const ChangeLocation =  observer(({show, onHide}) => {
                 <Modal.Body className="locationContainer">
                     <div className="map" />
                     <Form.Text className="wereAreYou">
+
                         Вам показаны условия доставки и оплаты в{" "}
                         <strong>{location.location}</strong>
                     </Form.Text>

@@ -36,12 +36,12 @@ const Basket = observer(() => {
   );
 
   let delivery = 50;
-  if (location.location !== 'Минск' && location.location !== 'минск') {
+  if (location.location !== 'Минск' && location.location !== 'Колодищи' && location.location !== 'Озерище') {
     delivery += 50; }
     // Проверка total
     if (total > 1000) {
         delivery = 0;
-    } else if (total > 500 && (location.location === 'Минск' || location.location === 'минск')) {
+    } else if (total > 500 && (location.location === 'Минск' || location.location === 'Озерище' || location.location === 'Колодищи')) {
       delivery = 0; }
       delivery = delivery === 0 ? 'бесплатно' : delivery;
 
@@ -59,7 +59,7 @@ const Basket = observer(() => {
         <div className='location-image'/>
         <div>
           <div>
-            Ваш населенный пункт: <a className='cart-form__link_base-alter' style={{cursor: "pointer"}} onClick={() => setVisible(true)}>{location.location}</a>
+            Ваш населенный пункт: <a className='cart-form__link_base-alter' style={{cursor: "pointer"}} onClick={() => setVisible(true)}>{location.location !== '' ? location.location: 'Выберите населённый пункт'}</a>
             <ChangeLocation show={Visible} onHide={() => setVisible(false)} />
           </div>
           <div className="cart-form__description">
@@ -84,7 +84,8 @@ const Basket = observer(() => {
 
         <div className='making_an_order'>
           <div>
-            <span className='time'>{location.location !== "Минск" && location.location !== "минск" ? 'Через 3 дня': 'Через 1 день'}</span> <span className='disclaimer'> доставка в г. {location.location}</span>
+            <span className='time'>{location.location !== "Минск" && location.location !== "Колодищи" && location.location !== "Озерище" ? 'Через 3 дня': 'Через 1 день'}</span>
+            <span className='disclaimer'> доставка в {location.location}</span>
             <ul>
               <li>по адресу — <strong>{delivery}</strong></li>
               <li>в пункт выдачи — <strong>бесплатно</strong></li>
