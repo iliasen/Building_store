@@ -38,9 +38,6 @@ export const Footer = () => {
               <NavLink className="href" to={ABOUT_ROUTE}>
                 About us
               </NavLink>
-              <NavLink className="href" to={ADMIN_ROUTE}>
-                Администрация
-              </NavLink>
               <NavLink className="href" to={PAYMENT_ROUTE}>
                 Способы оплаты
               </NavLink>

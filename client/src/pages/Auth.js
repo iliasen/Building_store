@@ -29,7 +29,7 @@ const Auth = observer(() => {
         user.setAuth(true)
         console.log('Registration')
         nav(SHOP_ROUTE)
-
+        window.location.reload()
     } catch (e) {
       alert(e.response.data.message)
     }

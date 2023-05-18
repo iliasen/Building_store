@@ -5,3 +5,24 @@
   border-radius: 10px;
   padding: 16px;
 }
+.find{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+
+}
+.falseFind{
+  background-image: url('../res/Shop/emptyFind.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+.find span{
+  font-size: 28px;
+}

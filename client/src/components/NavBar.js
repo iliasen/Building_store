@@ -25,7 +25,7 @@ const NavBar = observer(() => {
 
   useEffect(()=> {
     getItems(user.user.id).then((items) => basket.setBasket_items(items))
-  }, [basket.basket_items])
+  }, [])
 
 
   return (

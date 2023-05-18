@@ -3,7 +3,6 @@ import { observer } from 'mobx-react-lite'
 import { Context } from '../index'
 import { ListGroup } from 'react-bootstrap'
 import '../styles/TypeBar.css'
-import {fetchItems} from "../http/itemAPI";
 
 const TypeBar = observer(() => {
   const { item } = useContext(Context)

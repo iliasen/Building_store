@@ -9,14 +9,20 @@ import Pages from "./Pages";
 const ItemList = observer(() => {
   const { item } = useContext(Context)
   return (<div>
-      <Row className="list">
-        {item.items.map((item) => (
-          <Item key={item.id} item={item} />
-        ))}
-      </Row>
-        <div className='d-flex justify-content-center'>
-          <Pages/>
-        </div>
+          {item.items.length !== 0 ? <div>
+              <Row className="list">
+              {item.items.map((item) => (
+                  <Item key={item.id} item={item} />
+              ))}
+              </Row>
+              <div className='d-flex justify-content-center'>
+                  <Pages/>
+              </div>
+          </div> : <div className="find">
+            <div className='falseFind'/>
+            <span>Товары с такими параметрами не найдены</span>
+          </div>}
+
     </div>
   )
 })

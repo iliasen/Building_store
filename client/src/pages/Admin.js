@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {useContext, useState} from 'react'
 import { Button, Container, Image } from 'react-bootstrap'
 import CreateBrand from '../components/modals/CreateBrand'
 import CreateItem from '../components/modals/CreateItem'
@@ -10,6 +10,7 @@ import ChangeBrand from "../components/modals/ChangeBrand";
 import DelType from "../components/modals/DelType";
 import DelBrand from "../components/modals/DelBrand";
 import DelItem from "../components/modals/DelItem";
+import {Context} from "../index";
 
 const Admin = () => {
   const [brandVisible, setBrandVisible] = useState(false)
@@ -20,6 +21,8 @@ const Admin = () => {
   const [typeDelVisible, setTypeDelVisible] = useState(false)
   const [itemVisible, setItemVisible] = useState(false)
   const [itemDelVisible, setItemDelVisible] = useState(false)
+  const {user} = useContext(Context)
+
 
   return (
     <Container className="d-flex flex-column justify-content-center container-shop mt-5" style={{padding:235}}>
@@ -28,25 +31,25 @@ const Admin = () => {
         style={{ width: 300, height: 300 }}
         className="m-auto mt-5"
       ></Image>
-      <div className="d-flex flex-column">
+      {user.user.role === 'ADMIN' ? <div className="d-flex flex-column">
         <Button
-          variant={'outline-dark'}
-          className="mt-4 p-2"
-          onClick={() => setTypeVisible(true)}
+            variant={'outline-dark'}
+            className="mt-4 p-2"
+            onClick={() => setTypeVisible(true)}
         >
           Добавить тип
         </Button>
         <Button
-          variant={'outline-dark'}
-          className="mt-4 p-2"
-          onClick={() => setBrandVisible(true)}
+            variant={'outline-dark'}
+            className="mt-4 p-2"
+            onClick={() => setBrandVisible(true)}
         >
           Добавить бренд
         </Button>
         <Button
-          variant={'outline-dark'}
-          className="mt-4 p-2"
-          onClick={() => setItemVisible(true)}
+            variant={'outline-dark'}
+            className="mt-4 p-2"
+            onClick={() => setItemVisible(true)}
         >
           Добавить товар
         </Button>
@@ -95,7 +98,8 @@ const Admin = () => {
         <DelBrand show={brandDelVisible} onHide={() => setBrandDelVisible(false)}/>
         <CreateItem show={itemVisible} onHide={() => setItemVisible(false)} />
         <DelItem show={itemDelVisible} onHide={() => setItemDelVisible(false)}/>
-      </div>
+      </div>: <div style={{textAlign: "center" , fontSize: 40}}>В доступе отказано !</div>}
+
     </Container>
   )
 }

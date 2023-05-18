@@ -39,13 +39,13 @@ const Basket = observer(() => {
   if (location.location !== 'Минск' && location.location !== 'Колодищи' && location.location !== 'Озерище') {
     delivery += 50; }
     // Проверка total
-    if (total > 1000) {
+    if (total > 1400) {
         delivery = 0;
-    } else if (total > 500 && (location.location === 'Минск' || location.location === 'Озерище' || location.location === 'Колодищи')) {
+    } else if (total > 700 && (location.location === 'Минск' || location.location === 'Озерище' || location.location === 'Колодищи')) {
       delivery = 0; }
       delivery = delivery === 0 ? 'бесплатно' : delivery;
 
-  let finalPrice = total > 650 ? total * 0.95 : total
+  let finalPrice = total > 1000 ? Math.round(total * 0.95) : total
   function goToCheckout() {
      navigate(ORDER_ROUTE,{state: {total, delivery}});
   }
@@ -96,7 +96,7 @@ const Basket = observer(() => {
             <div className='d-flex'>
               <span className='total_quantity'>{total_quantity}</span>
               {total_quantity === 1 ? 'товар' : total_quantity < 5 ? 'товара' : 'товаров'} на сумму:ㅤ
-              {total > 650 ?
+              {total > 1000 ?
                   <div className='d-flex' >
                     <strong style={{scale: 1.2, fontSize: 15, fontWeight: 600}}>{finalPrice},00 р.</strong>
                     <div style={{fontSize:12, color: '#999'}}>*cкидка 5%</div>

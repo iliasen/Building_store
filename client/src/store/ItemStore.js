@@ -7,6 +7,7 @@ export default class ItemStore {
     this._items = []
     this._selectedType = {}
     this._selectedBrand = {}
+    this._selectedDelItem = {}
     this._page = 1
     this._totalCount = 0
     this._limit = 2
@@ -30,6 +31,9 @@ export default class ItemStore {
     this._selectedBrand = brand
   }
 
+  setSelectedDelItem(item){
+    this._selectedDelItem = item
+  }
   setPage(page) {
     this._page = page
   }
@@ -52,6 +56,10 @@ export default class ItemStore {
 
   get selectedBrand() {
     return this._selectedBrand
+  }
+
+  get selectedDelItem(){
+    return this._selectedDelItem
   }
 
   get totalCount() {

@@ -1,5 +1,5 @@
-import React, {useContext, useEffect} from 'react';
-import {Button, Container, Form} from "react-bootstrap";
+import React, {useContext, useEffect, useState} from 'react';
+import {Container} from "react-bootstrap";
 import {Context} from "../index";
 import {NavLink} from "react-router-dom";
 import {BASKET_ROUTE} from "../utils/consts";
@@ -8,18 +8,20 @@ import {observer} from "mobx-react-lite";
 
 import '../styles/Order.css'
 import {getItems} from "../http/basketAPI";
+import ConfirmTel from "../components/modals/ConfirmTel";
 
 
 const Order = observer( () => {
     const {user} = useContext(Context)
     const {location} = useContext(Context)
-
-
     const { basket } = useContext(Context)
+    const {number} = useContext(Context)
+
+    const [confirmVisible, setConfirmVisible] = useState(false)
 
     useEffect(()=> {
         getItems(user.user.id).then((items) => basket.setBasket_items(items))
-    }, [basket.basket_items])
+    }, [])
 
 
     const total = basket.basket_items.reduce(
@@ -31,60 +33,131 @@ const Order = observer( () => {
     let delivery = 50;
     if (location.location !== 'Минск' && location.location !== 'Колодищи' && location.location !== 'Озерище') {
         delivery += 50; }
-    if (total > 1000) {
+    if (total > 1400) {
         delivery = 0;
-    } else if (total > 500 && (location.location === 'Минск' || location.location === 'Озерище' || location.location === 'Колодищи')) {
+    } else if (total > 700 && (location.location === 'Минск' || location.location === 'Озерище' || location.location === 'Колодищи')) {
         delivery = 0; }
 
-    let finalPrice = total > 650 ? Math.round( total * 0.95)+delivery : total + delivery
+    let finalPrice = total > 1000 ? Math.round( total * 0.95)+delivery : total + delivery
+
+    const [value, setValue] = useState("");
+
+    const handleChange = (e) => {
+        let input = e.target.value;
+
+        // Удалить все нецифровые символы
+        input = input.replace(/\D/g, "");
+
+        // всегда добавляем префикс +375
+        if (!input.startsWith("375")) {
+            input = "375" + input;
+        }
+
+        // Формат +375 (xx) xxx-xx-xx
+        let formatted = "";
+        for (let i = 0; i < input.length; i++) {
+            if (i === 0) {
+                formatted += "+";
+            }
+            if (i === 3) {
+                formatted += " (";
+            }
+            if (i === 5) {
+                formatted += ") ";
+            }
+            if (i === 8 || i === 10) {
+                formatted += "-";
+            }
+            formatted += input[i];
+        }
+
+        setValue(formatted);
+    };
 
 
     return (
         <Container className='container-shop'>
+            <h2 className='mt-5'>Оформление заказа</h2>
             <div className='orderContainer'>
-                <div>
+                <form id='OrderForm'>
                     <div>
-                        <h2>Оформление заказа</h2>
                         населённый пункт
-                        <Form className='d-flex'>
-                            <Form.Control style={{paddingLeft: 16, fontWeight: 500, color: '#000', width: 350}} type="text" placeholder='Введите ваш населённый пункт' defaultValue={location.location} onChange={(e) => location.setLocation(e.target.value)}/>
+                        <div className='d-flex align-items-center'>
+                            <input className='Location' type="text" placeholder='Введите ваш населённый пункт' defaultValue={location.location} required onChange={(e) => location.setLocation(e.target.value)}/>
                             <input type='reset' className='resetLocationButton' value='x' onClick={() => location.setLocation('')}></input>
-                        </Form>
+                        </div>
                     </div>
 
                     <div className='deliveryAddress'>
                         <div>Доставка по адресу — {delivery === 0 ? 'бесплатно' : delivery +',00 руб'}, {location.location !== "Минск" && location.location !== "Колодищи" && location.location !== "Озерище" ? 'через 3 дня': 'через 1 день'}</div>
                         <span style={{color: '#999', fontSize: 13}}>Укажите как можно подробнее адрес доставки</span>
-                        <form className='d-flex'>
+                        <div className='d-flex'>
                             <div className='addressInputs'>
                                 <label>Улица</label>
-                                <input className='Address' type='text'/>
+                                <input className='Address' name='street' type='text' required/>
                             </div>
                             <div className='addressInputs'>
                                 <label>Дом</label>
-                                <input className='House' />
+                                <input className='House' name='house' required/>
                             </div>
                             <div className='addressInputs'>
-                                <label>Корп.</label>
-                                <input className='House' />
+                                <div><label>Корп.</label> <span style={{color: '#999', fontSize: 12 }}>(необязательно)</span></div>
+                                <input className='House' name='Corpus'/>
                             </div>
-                        </form>
-                        <form className='d-flex'>
-                            <div className='addressInputs'>
+                        </div>
+
+                        <div className='d-flex'>
+                            <div className='addressInputs' >
                                 <label>Под.</label>
-                                <input className='House' />
+                                <input className='House' name='entrance' required/>
                             </div>
                             <div className='addressInputs'>
                                 <label>Этаж</label>
-                                <input className='House' />
+                                <input className='House'  name='floor' required/>
                             </div>
                             <div className='addressInputs'>
                                 <label>Квартира</label>
-                                <input className='Flat' />
+                                <input className='Flat'  name='flat' required/>
                             </div>
-                        </form>
+                        </div>
                     </div>
-                </div>
+                    <div className='d-flex flex-column mt-4'>
+                        <label>Коментарий к заказу <span style={{color: '#999'}}>(необязательно)</span></label>
+                        <textarea className='orderComment'  rows='3' placeholder='Укажите дополнительные детали' name='orderDerails'/>
+                        <span className='mt-2' style={{maxWidth: 480, fontSize: 14, color: '#999'}}>Расскажите, вермя доставки, укажите код домофона или другую информацию, которая может пригодиться курьеру.</span>
+                    </div>
+
+                    {number.number === '' ? <div className='telNumber'>
+                        <strong>Телефон</strong>
+                        <div style={{fontSize: 14}}>Подтвердите ваш номер телефона, на него будет отправлено SMS с кодом !</div>
+                        <div className='d-flex mt-2'>
+                            <form>
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    value={value}
+                                    onChange={handleChange}
+                                    placeholder="+375 (xx) xxx-xx-xx"
+                                    required
+                                />
+                                <button
+                                    className='confirmTel'
+                                    disabled={!value}
+                                    onClick={() => setConfirmVisible(true)}
+                                >
+                                    Подтвердить номер
+                                </button>
+                            </form>
+                        </div>
+                        <div style={{color: '#999', fontSize: 14}} className='mt-1'>Например +375 (29) 842-05-07</div>
+                    </div>: null}
+
+                    <button type="submit" className='orderSentButton'>Заказать</button>
+                </form>
+
+
+
 
                 <div className='order'>
                     <div className='d-flex justify-content-between'>
@@ -115,8 +188,11 @@ const Order = observer( () => {
                     </div>
                 </div>
             </div>
+
+            <ConfirmTel show={confirmVisible} onHide={() => setConfirmVisible(false)}/>
         </Container>
     );
 });
 
 export default Order;
+

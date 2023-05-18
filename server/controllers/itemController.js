@@ -48,6 +48,12 @@ class ItemController {
         }
         return res.json(items)
     }
+
+    async getAllForRemove(req,res){
+        const items = await Item.findAll()
+        return res.json(items)
+    }
+
     async getOne(req, res) {//получение данных о товаре по id
         const {id} = req.params//праметр указывается в URl через /id(/1)
         const item = await Item.findOne(

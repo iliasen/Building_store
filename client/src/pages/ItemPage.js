@@ -78,6 +78,7 @@ const ItemPage = () => {
       const quantity = document.getElementsByName("quantity")[0];
       console.log(quantity.value);
       addItem(user.user.id, item.id, { quantity: quantity.value }).then();
+      window.location.reload()
     } else {
       // если пользователь не авторизован
       setShowAuthTooltip(true);
