@@ -15,6 +15,13 @@ const BasketItem = sequelize.define('basket_item', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     quantity: { type: DataTypes.INTEGER, defaultValue: 1 }
 })
+
+const Order = sequelize.define('order', {
+    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    address: {type: DataTypes.STRING, allowNull: false},
+    comment: {type: DataTypes.STRING, defaultValue: null}
+})
+
 const Item = sequelize.define('item', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     name: {type: DataTypes.STRING, unique: true, allowNull: false},
@@ -52,31 +59,34 @@ const TypeBrand = sequelize.define('type_brand', {
 })
 
 
-User.hasOne(Basket)
+User.hasOne(Basket,{foreignKeyConstraint: true, onDelete: 'CASCADE'})
 Basket.belongsTo(User)
 
-User.hasMany(Rating)
+User.hasMany(Rating,{foreignKeyConstraint: true, onDelete: 'CASCADE'})
 Rating.belongsTo(User)
 
-Basket.hasMany(BasketItem)
+Basket.hasMany(BasketItem,{foreignKeyConstraint: true, onDelete: 'CASCADE'})
 BasketItem.belongsTo(Basket)
 
-Item.hasMany(BasketItem)
+Basket.hasMany(Order,{foreignKeyConstraint: true, onDelete: 'CASCADE'})
+Order.belongsTo(Basket)
+
+Item.hasMany(BasketItem,{foreignKeyConstraint: true, onDelete: 'CASCADE'})
 BasketItem.belongsTo(Item)
 
 Basket.belongsToMany(Item, { through: BasketItem })
 Item.belongsToMany(Basket, { through: BasketItem })
 
-Type.hasMany(Item)
+Type.hasMany(Item,{foreignKeyConstraint: true, onDelete: 'CASCADE'})
 Item.belongsTo(Type)
 
-Brand.hasMany(Item)
+Brand.hasMany(Item,{foreignKeyConstraint: true, onDelete: 'CASCADE'})
 Item.belongsTo(Brand)
 
-Item.hasMany(Rating)
+Item.hasMany(Rating,{foreignKeyConstraint: true, onDelete: 'CASCADE'})
 Rating.belongsTo(Item)
 
-Item.hasMany(ItemInfo, {as: 'info'});
+Item.hasMany(ItemInfo, {as: 'info', foreignKeyConstraint: true, onDelete: 'CASCADE'});
 ItemInfo.belongsTo(Item)
 
 Type.belongsToMany(Brand, {through: TypeBrand })
@@ -86,6 +96,7 @@ module.exports = {
     User,
     Basket,
     BasketItem,
+    Order,
     Item,
     Type,
     Brand,

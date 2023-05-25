@@ -1,7 +1,7 @@
 const ApiError = require('../error/ApiError')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-const {User,Basket, Brand} = require('../models/models')
+const {User,Basket} = require('../models/models')
 
 const generateJwt = (id, email, role) => {
     return jwt.sign(
@@ -15,7 +15,7 @@ class UserController{
     async registration(req,res,next){
         const {email, password, role} = req.body
         if(!email || !password){
-            return next(ApiError.badRequest('Неверный email или пароль'))
+            return next(ApiError.badRequest('Нет email или пароль'))
         }
         const candidate = await User.findOne({where: {email}})
         if(candidate){

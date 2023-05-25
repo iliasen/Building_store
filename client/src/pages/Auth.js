@@ -36,9 +36,9 @@ const Auth = observer(() => {
   }
 
   const back = async (event) => {
-    event.preventDefault()
-    nav(-1)
-  }
+      event.preventDefault()
+      nav(-1)
+    }
 
 
 

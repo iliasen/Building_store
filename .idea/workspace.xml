@@ -5,29 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da2e4766-0cc2-4c75-bcee-bee778690602" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/modals/ConfirmTel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/store/TelNumberStore.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/ItemList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ItemList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/NavBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Pages.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Pages.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/TypeBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/TypeBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/modals/DelItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/modals/DelItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/http/itemAPI.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/http/itemAPI.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/modals/ChangeLocation.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/modals/ChangeLocation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/AboutUs.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/AboutUs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/Admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Admin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/Basket.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Basket.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/ItemPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/ItemPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/Order.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Order.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/Shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Shop.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/store/ItemStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/ItemStore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/ItemList.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/ItemList.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/Order.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Order.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/itemController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/itemController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/db.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/itemRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/itemRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/NavBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/NavBar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/basketController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/basketController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/userController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/models.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/models.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/Диаграмма базы данных.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +53,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;TODO_SCOPE&quot;: &quot;Project Files&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Work/git/Building_store/client/src/components/modals&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Work/git/Building_store&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -204,6 +195,26 @@
       <workItem from="1684396354153" duration="984000" />
       <workItem from="1684402186292" duration="4531000" />
       <workItem from="1684415906400" duration="17803000" />
+      <workItem from="1684436977430" duration="2665000" />
+      <workItem from="1684488023605" duration="204000" />
+      <workItem from="1684489786899" duration="1933000" />
+      <workItem from="1684574063987" duration="9000" />
+      <workItem from="1684608078202" duration="4038000" />
+      <workItem from="1684650338450" duration="1954000" />
+      <workItem from="1684655193922" duration="5146000" />
+      <workItem from="1684661102458" duration="10491000" />
+      <workItem from="1684700384396" duration="619000" />
+      <workItem from="1684742445455" duration="995000" />
+      <workItem from="1684752123170" duration="631000" />
+      <workItem from="1684758044220" duration="22000" />
+      <workItem from="1684836139520" duration="4491000" />
+      <workItem from="1684857124124" duration="1092000" />
+      <workItem from="1684920504203" duration="466000" />
+      <workItem from="1684921357804" duration="2816000" />
+      <workItem from="1684956651358" duration="1500000" />
+      <workItem from="1684997245838" duration="458000" />
+      <workItem from="1684999614231" duration="2590000" />
+      <workItem from="1685017747864" duration="6693000" />
     </task>
     <servers />
   </component>

@@ -26,7 +26,7 @@ export const Footer = () => {
             <div>
               <div>Интернет-магазин</div>
               <div>7748 (МТС, Life, А1)</div>
-              <div>Для заявок:cc@gefest.by</div>
+              <div>Для заявок: cc@gefest.by</div>
               <div>Прием звонков: c 8.00 до 22.00</div>
             </div>
 
@@ -48,7 +48,7 @@ export const Footer = () => {
           </div>
 
           <div className="d-flex justify-content-between">
-            Все прова защищены
+            Все права защищены
             <div>© 2018-2023 OAO «Гефест»</div>
           </div>
         </div>

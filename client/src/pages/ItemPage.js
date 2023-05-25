@@ -107,19 +107,20 @@ const ItemPage = () => {
                   <div className="mark_rate"> <AverageRating itemId={id} /> </div>
                   <div className="rate"></div>
                   <div id="after_feedback"></div>
-                  <div
-                    id="feedback-button"
-                    onClick={() => {
-                      const container =
-                        document.getElementById('feedback-container')
-                      container.setAttribute('style', 'display: block;')
-                      const feedback =
-                        document.getElementById('feedback-button')
-                      feedback.setAttribute('style', 'display: none;')
-                    }}
+                  {user.Auth && <div
+                      id="feedback-button"
+                      onClick={() => {
+                        const container =
+                            document.getElementById('feedback-container')
+                        container.setAttribute('style', 'display: block;')
+                        const feedback =
+                            document.getElementById('feedback-button')
+                        feedback.setAttribute('style', 'display: none;')
+                      }}
                   >
                     Оставить отзыв
-                  </div>
+                  </div>}
+
                 </div>
 
                 <div id="feedback-container">
@@ -317,7 +318,7 @@ const ItemPage = () => {
             <div>
               <b>Цена в интернет-магазине</b>
               <div className="description_other_shops">
-                В розничных магазинах цена товара может отличатся
+                В розничных магазинах цена товара может отличаться
               </div>
             </div>
 

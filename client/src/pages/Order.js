@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useContext, useEffect, useRef, useState} from 'react';
 import {Container} from "react-bootstrap";
 import {Context} from "../index";
 import {NavLink} from "react-router-dom";
@@ -14,19 +14,32 @@ import ConfirmTel from "../components/modals/ConfirmTel";
 const Order = observer( () => {
     const {user} = useContext(Context)
     const {location} = useContext(Context)
-    const { basket } = useContext(Context)
+    const {basket} = useContext(Context)
     const {number} = useContext(Context)
-
     const [confirmVisible, setConfirmVisible] = useState(false)
+    const [street, setStreet] = useState(null)
+    const [house, setHouse] = useState(null)
+    const [corpus, setCorpus] = useState('')
+    const [entrance,setEntrance] = useState(null)
+    const [floor, setFloor] = useState(null)
+    const [flat, setFlat] = useState(null)
+    const [comment, setComment] = useState(null)
+
+    const address ='г.'+ location.location + ' ул.'+ street + ' д.' + house + ' к.' + corpus + ' под.' + entrance + ' этаж: ' + floor + ' кв.' + flat
+    console.log('Адрес доставки: ' + address + ", коментарий к заказу: " + comment)
+
+
+    const innerFormRef = useRef(null)
 
     useEffect(()=> {
         getItems(user.user.id).then((items) => basket.setBasket_items(items))
     }, [])
 
 
+
+
     const total = basket.basket_items.reduce(
-        (sum, item) => sum + item.price * item.quantity,
-        0
+        (sum, item) => sum + item.price * item.quantity, 0
     );
 
 
@@ -74,14 +87,22 @@ const Order = observer( () => {
         setValue(formatted);
     };
 
+    const submitInnerForm = (event) => {
+        event.preventDefault();
+        //innerFormRef.current.submit()
+        setConfirmVisible(true)
+    }
 
+    const submitOrder= () => {
+
+    }
     return (
         <Container className='container-shop'>
             <h2 className='mt-5'>Оформление заказа</h2>
             <div className='orderContainer'>
                 <form id='OrderForm'>
                     <div>
-                        населённый пункт
+                        Населённый пункт
                         <div className='d-flex align-items-center'>
                             <input className='Location' type="text" placeholder='Введите ваш населённый пункт' defaultValue={location.location} required onChange={(e) => location.setLocation(e.target.value)}/>
                             <input type='reset' className='resetLocationButton' value='x' onClick={() => location.setLocation('')}></input>
@@ -94,44 +115,44 @@ const Order = observer( () => {
                         <div className='d-flex'>
                             <div className='addressInputs'>
                                 <label>Улица</label>
-                                <input className='Address' name='street' type='text' required/>
+                                <input className='Address' name='street' type='text' placeholder='Введите улицу' value={street} onChange={(e)=>setStreet(e.target.value)} required/>
                             </div>
                             <div className='addressInputs'>
                                 <label>Дом</label>
-                                <input className='House' name='house' required/>
+                                <input className='House' name='house' value={house} onChange={(e)=> setHouse(e.target.value)} required/>
                             </div>
                             <div className='addressInputs'>
-                                <div><label>Корп.</label> <span style={{color: '#999', fontSize: 12 }}>(необязательно)</span></div>
-                                <input className='House' name='Corpus'/>
+                                <div className='d-flex'><label>Корп.</label> <span style={{color: '#999', fontSize: 12 }}>(необязательно)</span></div>
+                                <input className='House' name='Corpus' value={corpus} onChange={(e)=> setCorpus(e.target.value)}/>
                             </div>
                         </div>
 
                         <div className='d-flex'>
                             <div className='addressInputs' >
                                 <label>Под.</label>
-                                <input className='House' name='entrance' required/>
+                                <input className='House' name='entrance' value={entrance} onChange={(e)=> setEntrance(e.target.value)} required/>
                             </div>
                             <div className='addressInputs'>
                                 <label>Этаж</label>
-                                <input className='House'  name='floor' required/>
+                                <input className='House'  name='floor' value={floor} onChange={(e)=> setFloor(e.target.value)} required/>
                             </div>
                             <div className='addressInputs'>
                                 <label>Квартира</label>
-                                <input className='Flat'  name='flat' required/>
+                                <input className='Flat'  name='flat' value={flat} onChange={(e)=> setFlat(e.target.value)} required/>
                             </div>
                         </div>
                     </div>
                     <div className='d-flex flex-column mt-4'>
                         <label>Коментарий к заказу <span style={{color: '#999'}}>(необязательно)</span></label>
-                        <textarea className='orderComment'  rows='3' placeholder='Укажите дополнительные детали' name='orderDerails'/>
+                        <textarea className='orderComment'  rows='3' placeholder='Укажите дополнительные детали' name='orderDetails' value={comment} onChange={(e)=> setComment(e.target.value)}/>
                         <span className='mt-2' style={{maxWidth: 480, fontSize: 14, color: '#999'}}>Расскажите, вермя доставки, укажите код домофона или другую информацию, которая может пригодиться курьеру.</span>
                     </div>
 
-                    {number.number === '' ? <div className='telNumber'>
+                    {number.number === '' && <div className='telNumber'>
                         <strong>Телефон</strong>
                         <div style={{fontSize: 14}}>Подтвердите ваш номер телефона, на него будет отправлено SMS с кодом !</div>
                         <div className='d-flex mt-2'>
-                            <form>
+                            <form ref={innerFormRef}>
                                 <input
                                     type="tel"
                                     id="phone"
@@ -142,18 +163,20 @@ const Order = observer( () => {
                                     required
                                 />
                                 <button
+                                    type='button'
                                     className='confirmTel'
                                     disabled={!value}
-                                    onClick={() => setConfirmVisible(true)}
+                                    // style={{backgroundColor: "grey", cursor:'not-allowed'}}
+                                    onClick={submitInnerForm}
                                 >
                                     Подтвердить номер
                                 </button>
                             </form>
                         </div>
                         <div style={{color: '#999', fontSize: 14}} className='mt-1'>Например +375 (29) 842-05-07</div>
-                    </div>: null}
+                    </div>}
 
-                    <button type="submit" className='orderSentButton'>Заказать</button>
+                    <button className='orderSentButton'>Заказать</button>
                 </form>
 
 

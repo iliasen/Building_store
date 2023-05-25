@@ -5,7 +5,7 @@ class BasketController{
 
         async addItem(req, res, next) {
         try {
-            const { userId, itemId} = req.params
+            const {userId, itemId} = req.params
             const {quantity} = req.body
 
             // Найти или создать корзину с заданным идентификатором
@@ -63,7 +63,6 @@ aaa
                 typeId: item.item.typeId,
                 brandId: item.item.brandId
             }));
-
             return res.json({ basket_items: itemsWithQuantity })
         }catch (e) {
             next(ApiError.badRequest(e.message))

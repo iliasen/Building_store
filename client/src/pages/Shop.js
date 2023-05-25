@@ -14,7 +14,7 @@ const Shop = observer(() => {
   useEffect(() => {
     fetchTypes().then((data) => item.setTypes(data)) //передаем то что вернулось в запросе
     fetchBrands().then((data) => item.setBrands(data))
-    fetchItems(null, null , 1 ,2).then((data) =>{
+    fetchItems(null, null , 1 ,8).then((data) =>{
         item.setItems(data.rows)
         item.setTotalCount(data.count)
     })
@@ -23,12 +23,12 @@ const Shop = observer(() => {
   useEffect(() => {
     // Проверяем, что item.selectedType и item.selectedBrand не равны null
     if (item.selectedType && item.selectedBrand) {
-      fetchItems(item.selectedType.id, item.selectedBrand.id, item.page, 2).then(data => {
+      fetchItems(item.selectedType.id, item.selectedBrand.id, item.page, 8).then(data => {
         item.setItems(data.rows)
         item.setTotalCount(data.count)
       })
     }else{// если пустой
-      fetchItems(null, null , item.page ,2).then((data) =>{
+      fetchItems(null, null , item.page ,8).then((data) =>{
         item.setItems(data.rows)
         item.setTotalCount(data.count)
       })
