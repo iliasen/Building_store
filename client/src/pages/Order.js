@@ -25,7 +25,7 @@ const Order = observer( () => {
     const [flat, setFlat] = useState(null)
     const [comment, setComment] = useState(null)
 
-    const address ='г.'+ location.location + ' ул.'+ street + ' д.' + house + ' к.' + corpus + ' под.' + entrance + ' этаж: ' + floor + ' кв.' + flat
+    const address ='г.'+ location.location + ' ул.'+ street + ' д.' + house + ' к.' + corpus + ' под.' + entrance + ' этаж:' + floor + ' кв.' + flat
     console.log('Адрес доставки: ' + address + ", коментарий к заказу: " + comment)
 
 

@@ -18,6 +18,7 @@ const BasketItem = sequelize.define('basket_item', {
 
 const Order = sequelize.define('order', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    user: {type: DataTypes.STRING, unique: true},
     address: {type: DataTypes.STRING, allowNull: false},
     comment: {type: DataTypes.STRING, defaultValue: null}
 })

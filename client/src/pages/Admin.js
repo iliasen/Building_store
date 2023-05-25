@@ -12,6 +12,8 @@ import DelBrand from "../components/modals/DelBrand";
 import DelItem from "../components/modals/DelItem";
 import {Context} from "../index";
 
+import "../styles/Admin.css"
+
 const Admin = () => {
   const [brandVisible, setBrandVisible] = useState(false)
   const [brandChangeVisible, setBrandChangeVisible] = useState(false)
@@ -23,15 +25,30 @@ const Admin = () => {
   const [itemDelVisible, setItemDelVisible] = useState(false)
   const {user} = useContext(Context)
 
-
   return (
     <Container className="d-flex flex-column justify-content-center container-shop mt-5" style={{padding:235}}>
+      
+      {user.user.role === 'ADMIN' && <div className='d-flex justify-content-center'>
+      <Button variant='outline-info' style={{marginRight: 72}} onClick={() => {
+        const orders = document.getElementById('orders')
+        orders.setAttribute('style', 'display: none')
+        const admin = document.getElementById('adminPanel')
+        admin.setAttribute('style', 'display: flex')
+      }}>Управление</Button>
+      <Button variant='outline-info' onClick={() => {
+        const orders = document.getElementById('orders')
+        orders.setAttribute('style', 'display: flex')
+        const admin = document.getElementById('adminPanel')
+        admin.setAttribute('style', 'display: none')
+      }}>Заказы</Button>
+      </div>}
+
       <Image
         src={logo}
         style={{ width: 300, height: 300 }}
         className="m-auto mt-5"
       ></Image>
-      {user.user.role === 'ADMIN' ? <div className="d-flex flex-column">
+      {user.user.role === 'ADMIN' ? <div id='adminPanel'>
         <Button
             variant={'outline-dark'}
             className="mt-4 p-2"
@@ -100,6 +117,7 @@ const Admin = () => {
         <DelItem show={itemDelVisible} onHide={() => setItemDelVisible(false)}/>
       </div>: <div style={{textAlign: "center" , fontSize: 40}}>В доступе отказано !</div>}
 
+      <div id="orders">orders</div>
     </Container>
   )
 }

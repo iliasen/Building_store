@@ -13,6 +13,10 @@ class ApiError extends Error{
     static forbidden(massage){
         return new ApiError(403,massage)
     }
+
+    static OK(massage){
+        return new ApiError(403,massage)
+    }
 }
 
 module.exports = ApiError
