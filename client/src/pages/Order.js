@@ -7,8 +7,10 @@ import {observer} from "mobx-react-lite";
 
 
 import '../styles/Order.css'
+
 import {getItems} from "../http/basketAPI";
 import ConfirmTel from "../components/modals/ConfirmTel";
+import {addOrder} from "../http/orderAPI";
 
 
 const Order = observer( () => {
@@ -89,12 +91,12 @@ const Order = observer( () => {
 
     const submitInnerForm = (event) => {
         event.preventDefault();
-        //innerFormRef.current.submit()
         setConfirmVisible(true)
     }
 
-    const submitOrder= () => {
-
+    const submitOrder = (event) => {
+        event.preventDefault();
+        addOrder(user.user.id, address, comment).then()
     }
     return (
         <Container className='container-shop'>
@@ -176,7 +178,7 @@ const Order = observer( () => {
                         <div style={{color: '#999', fontSize: 14}} className='mt-1'>Например +375 (29) 842-05-07</div>
                     </div>}
 
-                    <button className='orderSentButton'>Заказать</button>
+                    <button className='orderSentButton' type='submit' onClick={submitOrder}>Заказать</button>
                 </form>
 
 

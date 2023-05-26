@@ -1,9 +1,9 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import { Button, Container, Image } from 'react-bootstrap'
 import CreateBrand from '../components/modals/CreateBrand'
 import CreateItem from '../components/modals/CreateItem'
 import CreateType from '../components/modals/CreateType'
-
+import {getOrder} from "../http/orderAPI";
 import logo from '../res/лого.png'
 import ChangeType from "../components/modals/ChangeType";
 import ChangeBrand from "../components/modals/ChangeBrand";
@@ -13,8 +13,11 @@ import DelItem from "../components/modals/DelItem";
 import {Context} from "../index";
 
 import "../styles/Admin.css"
+import {observer} from "mobx-react-lite";
+import OrderItem from "../components/modals/OrderItem";
 
-const Admin = () => {
+
+const Admin = observer(() => {
   const [brandVisible, setBrandVisible] = useState(false)
   const [brandChangeVisible, setBrandChangeVisible] = useState(false)
   const [brandDelVisible, setBrandDelVisible] = useState(false)
@@ -24,9 +27,16 @@ const Admin = () => {
   const [itemVisible, setItemVisible] = useState(false)
   const [itemDelVisible, setItemDelVisible] = useState(false)
   const {user} = useContext(Context)
+  const {order} = useContext(Context)
+
+  useEffect(()=> {
+      getOrder().then((orders)=> order.setOrder(orders))
+      console.log(order.order.length)
+  },[])
+
 
   return (
-    <Container className="d-flex flex-column justify-content-center container-shop mt-5" style={{padding:235}}>
+    <Container className="d-flex flex-column justify-content-center  mt-5" style={{paddingRight:235, paddingLeft:235, paddingBottom: 40}}>
       
       {user.user.role === 'ADMIN' && <div className='d-flex justify-content-center'>
       <Button variant='outline-info' style={{marginRight: 72}} onClick={() => {
@@ -117,8 +127,18 @@ const Admin = () => {
         <DelItem show={itemDelVisible} onHide={() => setItemDelVisible(false)}/>
       </div>: <div style={{textAlign: "center" , fontSize: 40}}>В доступе отказано !</div>}
 
-      <div id="orders">orders</div>
+
+          <div id="orders">
+              {order.order.length !== 0 ?
+                  <div>
+                      {order.order.map((order) =>
+                          (<OrderItem key={order.id} order={order}/>)
+                      )}
+                  </div>:<h3 className='emptyOrder'>Сейчас заказов нет</h3>}
+      </div>
+
+
     </Container>
   )
-}
+})
 export default Admin

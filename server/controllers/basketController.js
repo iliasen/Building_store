@@ -40,20 +40,20 @@ class BasketController{
             next(ApiError.badRequest(e.message))
         }
         }
-aaa
+
     async getItems(req, res, next) {
         try {
             const { userId } = req.params
 
-            const basket = await Basket.findOne({where: { id: userId },
-                include: [{ model: BasketItem, as: 'basket_items', include: [{ model: Item, as: 'item' }] }],order: [['basket_items', 'id', 'ASC']]
+            const basket = await Basket.findOne({where: { userId: userId },
+                include: [{ model: BasketItem, as: 'basketItems', include: [{ model: Item, as: 'item' }] }], order: [['basketItems', 'id', 'ASC']]
             })
 
             if (!basket) {
                 return next(ApiError.internal("Ошибка. Корзина с заданным id не найдена"))
             }
 
-            const itemsWithQuantity = basket.basket_items.map(item => ({
+            const itemsWithQuantity = basket.basketItems.map(item => ({
                 id: item.itemId,
                 name: item.item.name,
                 price: item.item.price,
@@ -65,6 +65,7 @@ aaa
             }));
             return res.json({ basket_items: itemsWithQuantity })
         }catch (e) {
+            console.log(e)
             next(ApiError.badRequest(e.message))
         }
     }

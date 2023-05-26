@@ -18,7 +18,7 @@ const BasketItem = sequelize.define('basket_item', {
 
 const Order = sequelize.define('order', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    user: {type: DataTypes.STRING, unique: true},
+    username: {type: DataTypes.STRING,allowNull: false},
     address: {type: DataTypes.STRING, allowNull: false},
     comment: {type: DataTypes.STRING, defaultValue: null}
 })
@@ -32,6 +32,12 @@ const Item = sequelize.define('item', {
     img: {type: DataTypes.STRING, allowNull: false},
 })
 
+const OrderItem = sequelize.define('order_item', {
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    orderId: { type: DataTypes.INTEGER, references: {model: Order, key: 'id'}},
+    itemId: { type: DataTypes.INTEGER, references: {model: Item, key: 'id'}},
+    quantity: { type: DataTypes.INTEGER, defaultValue: 1 }
+})
 
 const Type = sequelize.define('type', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
@@ -66,17 +72,29 @@ Basket.belongsTo(User)
 User.hasMany(Rating,{foreignKeyConstraint: true, onDelete: 'CASCADE'})
 Rating.belongsTo(User)
 
-Basket.hasMany(BasketItem,{foreignKeyConstraint: true, onDelete: 'CASCADE'})
+User.hasMany(Order,{foreignKeyConstraint: true, onDelete: 'CASCADE'}) // добавить эту связь
+Order.belongsTo(User)
+
+Basket.hasMany(BasketItem,{foreignKeyConstraint: true, onDelete: 'CASCADE',foreignKey: 'basketId', as: 'basketItems'})
 BasketItem.belongsTo(Basket)
 
-Basket.hasMany(Order,{foreignKeyConstraint: true, onDelete: 'CASCADE'})
-Order.belongsTo(Basket)
+// Basket.hasMany(Order,{foreignKeyConstraint: true, onDelete: 'CASCADE'})
+// Order.belongsTo(Basket)
+
+Order.hasMany(OrderItem,{foreignKeyConstraint: true, onDelete: 'CASCADE', foreignKey: 'orderId', as: 'orderItems'})
+OrderItem.belongsTo(Order,{foreignKey: 'orderId', as: 'order'})
 
 Item.hasMany(BasketItem,{foreignKeyConstraint: true, onDelete: 'CASCADE'})
 BasketItem.belongsTo(Item)
 
+Item.hasMany(OrderItem,{foreignKeyConstraint: true, onDelete: 'CASCADE',foreignKey: 'itemId', as: 'orderItems'})
+OrderItem.belongsTo(Item,{foreignKey: 'itemId', as: 'item'})
+
 Basket.belongsToMany(Item, { through: BasketItem })
 Item.belongsToMany(Basket, { through: BasketItem })
+
+Order.belongsToMany(Item, { through: OrderItem })
+Item.belongsToMany(Order, { through: OrderItem })
 
 Type.hasMany(Item,{foreignKeyConstraint: true, onDelete: 'CASCADE'})
 Item.belongsTo(Type)
@@ -98,6 +116,7 @@ module.exports = {
     Basket,
     BasketItem,
     Order,
+    OrderItem,
     Item,
     Type,
     Brand,

@@ -6,7 +6,6 @@ import AverageRating from "./modals/AverageRating";
 import rate from "../res/star.png";
 import {useNavigate} from "react-router-dom";
 import {ITEM_ROUTE} from "../utils/consts";
-import bind from '../res/Basket/bind.png'
 import {removeItem, updateQuantity} from "../http/basketAPI";
 import {Context} from "../index";
 import {observer} from "mobx-react-lite";
