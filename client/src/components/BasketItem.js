@@ -49,11 +49,11 @@ const BasketItem =observer(  ({ item }) => {
 
                 <div className='item-quantity-price'>
                     <div className='bind-container'>
-                        <div className='bind' onClick={()=> removeItem(user.user.id, item.id)}/>
+                        <div className='bind' onClick={()=> removeItem(user.user.id, item.id).then(() => window.location.reload())}/>
                     </div>
 
                     <Form>
-                        <Form.Control type='number' style={{textAlign:"center", width: 125}} defaultValue={item.quantity} onChange={(e) =>  updateQuantity(user.user.id, item.id, e.target.value)} min='1' max='10'/>
+                        <Form.Control type='number' style={{textAlign:"center", width: 125}} defaultValue={item.quantity} onChange={(e) =>  updateQuantity(user.user.id, item.id, e.target.value).then(() => window.location.reload())} min='1' max='10'/>
                         <div> {item.quantity !== 1 ? <div className='price-for-one-item'>{item.price}.00 р./шт.</div> : null}</div>
                     </Form>
 

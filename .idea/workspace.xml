@@ -5,20 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da2e4766-0cc2-4c75-bcee-bee778690602" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/modals/OrderItem.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/store/OrderStore.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/styles/OrderItem.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/modals/OrderCheck.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/controllers/orderController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/controllers/orderController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/routes/orderRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/routes/orderRouter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/BasketItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/BasketItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/http/orderAPI.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/http/orderAPI.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/Admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/ItemPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/ItemPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/Basket.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Basket.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/Order.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Order.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/styles/Admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/basketController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/basketController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/models/models.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/models.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -220,6 +213,11 @@
       <workItem from="1685038751790" duration="35000" />
       <workItem from="1685041861345" duration="7265000" />
       <workItem from="1685124749836" duration="9474000" />
+      <workItem from="1685284162950" duration="294000" />
+      <workItem from="1685514197464" duration="15000" />
+      <workItem from="1685629143133" duration="633000" />
+      <workItem from="1685635820235" duration="736000" />
+      <workItem from="1685734412510" duration="7480000" />
     </task>
     <servers />
   </component>

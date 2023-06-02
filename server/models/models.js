@@ -72,7 +72,7 @@ Basket.belongsTo(User)
 User.hasMany(Rating,{foreignKeyConstraint: true, onDelete: 'CASCADE'})
 Rating.belongsTo(User)
 
-User.hasMany(Order,{foreignKeyConstraint: true, onDelete: 'CASCADE'}) // добавить эту связь
+User.hasMany(Order,{foreignKeyConstraint: true, onDelete: 'CASCADE'})
 Order.belongsTo(User)
 
 Basket.hasMany(BasketItem,{foreignKeyConstraint: true, onDelete: 'CASCADE',foreignKey: 'basketId', as: 'basketItems'})

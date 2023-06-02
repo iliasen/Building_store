@@ -11,6 +11,7 @@ import '../styles/Order.css'
 import {getItems} from "../http/basketAPI";
 import ConfirmTel from "../components/modals/ConfirmTel";
 import {addOrder} from "../http/orderAPI";
+import OrderCheck from "../components/modals/OrderCheck";
 
 
 const Order = observer( () => {
@@ -18,6 +19,7 @@ const Order = observer( () => {
     const {location} = useContext(Context)
     const {basket} = useContext(Context)
     const {number} = useContext(Context)
+    const [visible, setVisible] = useState(false)
     const [confirmVisible, setConfirmVisible] = useState(false)
     const [street, setStreet] = useState(null)
     const [house, setHouse] = useState(null)
@@ -96,8 +98,32 @@ const Order = observer( () => {
 
     const submitOrder = (event) => {
         event.preventDefault();
-        addOrder(user.user.id, address, comment).then()
+        addOrder(user.user.id, address, comment).then(()=>setVisible(true))
     }
+
+    // const [errors, setErrors] = useState({});
+    // const submitOrder = (event) => {
+    //     event.preventDefault();
+    //
+    //     setErrors({});
+    //     // Создадим флаг для проверки валидности формы
+    //     let isValid = true;
+    //     for (let field of document.querySelectorAll("[required]")) {
+    //         let name = field.name;
+    //         let value = eval(name); // Используем eval для получения значения переменной с именем name
+    //         // Если значение пустое, то добавим ошибку и установим флаг в false
+    //         if (!value) {
+    //             setErrors({...errors, [name]: "This field is required"});
+    //             isValid = false;
+    //         }
+    //     }
+    //     // Если форма валидна, то вызовем функцию addOrder
+    //     if (isValid) {
+    //         addOrder(user.user.id, address, comment).then(()=>setVisible(true));
+    //     }
+    // }
+
+
     return (
         <Container className='container-shop'>
             <h2 className='mt-5'>Оформление заказа</h2>
@@ -178,7 +204,7 @@ const Order = observer( () => {
                         <div style={{color: '#999', fontSize: 14}} className='mt-1'>Например +375 (29) 842-05-07</div>
                     </div>}
 
-                    <button className='orderSentButton' type='submit' onClick={submitOrder}>Заказать</button>
+                    <button className='orderSentButton' type='button' onClick={submitOrder}>Заказать</button>
                 </form>
 
 
@@ -215,6 +241,7 @@ const Order = observer( () => {
             </div>
 
             <ConfirmTel show={confirmVisible} onHide={() => setConfirmVisible(false)}/>
+            <OrderCheck show={visible} onHide={() => setVisible(false)}/>
         </Container>
     );
 });
